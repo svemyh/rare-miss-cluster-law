@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "pdf_sha256": "80c1e1ce244e2741c4506ad9ef7ac88a03a7615958f9bb11f9bc3fe8de5d1700",
+  "pdf_sha256": "767d0710b801ca10452cb2bff2b635a592c7f4613585e4bb00572184be1cf339",
   "pages_reviewed": [
     1,
     2,
@@ -8,13 +8,32 @@
     4,
     5,
     6,
-    7
+    7,
+    8,
+    9,
+    10,
+    11
   ],
-  "review": "Coordinator visual inspection of all rendered pages in the packaged build; not independent specialist review.",
+  "review": "Coordinator visual inspection, not independent specialist review",
+  "method": "All eleven pages were viewed; after final typography changes, pages 6, 10 and 11 were re-viewed and all other page images were hash-identical to those already inspected.",
+  "page_png_sha256": {
+    "paper/build/qa/page-01.png": "d0d60b141ca6b1b40f8483a92a381aec75fa27635c662912cfa5a1a861cab1e1",
+    "paper/build/qa/page-02.png": "228db724345548efdd816d04c51a6340c1075109297869aa040a444746ca302a",
+    "paper/build/qa/page-03.png": "c8b7c6f6354a4399e4bb92e4f21b94161289b5622b6dcd83963dd602ac1afc57",
+    "paper/build/qa/page-04.png": "fef266491eeec2fae7831606878ae58c9fcd901291c64f7a1dcd80041fde5438",
+    "paper/build/qa/page-05.png": "e70c5fae825575586d962bc6f196af8849491d86b6adcaf2e38ebc8f07f98789",
+    "paper/build/qa/page-06.png": "ca6c914cc57d044976d8d1839c7289c489a7f1c476c4933f99f835849d14eed4",
+    "paper/build/qa/page-07.png": "d6f9200582fa73aa1ffbcfeff9a80db5d1c6575edf65fee659fca7317244e8cf",
+    "paper/build/qa/page-08.png": "28ee246536ba4a53cb43f15434d7ad98a2e497992828a849c2798ed17d803c38",
+    "paper/build/qa/page-09.png": "9a3d987667555096eafbf3c377e2348b4cdfd549be6241ea2b0242d7347cb868",
+    "paper/build/qa/page-10.png": "2d300d4e80816a3776c1ff8f9f387930baac41961f9b491e0e4833a4e5f078d2",
+    "paper/build/qa/page-11.png": "3b7fe0879df921890587a26a5ef70fe00a1ee16331660363a5aaa57cc8afcfed"
+  },
   "checks": [
-    "No clipped or overlapping text/formulas",
-    "Updated Lean proof disclosures legible on pages 1 and 7",
-    "References and page numbering legible"
+    "No clipping or overlapping formulas",
+    "Packing and finite-window theorem readable",
+    "Formalization correspondence table readable",
+    "Bibliography spacing repaired and inspected"
   ],
   "date_utc": "2026-09-16"
 }

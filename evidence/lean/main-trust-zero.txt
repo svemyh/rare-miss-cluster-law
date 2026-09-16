@@ -2,6 +2,10 @@
 'MissedUpdates.Matrices.rare_miss_cluster_law_for_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MissedUpdates.Matrices.clusterSup_eq_paperM' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MissedUpdates.Matrices.positive_eigenvalue_spectralRadius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.clusterSup_le_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.original_finite_window_rate_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.coefficient_error_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.all_later_windows_accuracy' depends on axioms: [propext, Classical.choice, Quot.sound]
 MissedUpdates.Matrices.rare_miss_cluster_law.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] [Nonempty n]
   (C D : Matrix n n ℝ) (hC : ∀ (i j : n), 0 < C i j) (hD : ∀ (i j : n), 0 < D i j) :
   0 < MissedUpdates.Matrices.ordinarySpectralRadius C ∧
@@ -15,6 +19,42 @@ MissedUpdates.Matrices.rare_miss_cluster_law.{u_1} {n : Type u_1} [Fintype n] [D
           Filter.atTop
           (nhds
             (Real.log (MissedUpdates.Matrices.paperM F ((MissedUpdates.Matrices.ordinarySpectralRadius C)⁻¹ • D) m)))
+MissedUpdates.Matrices.original_finite_window_rate_bounds.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] [Nonempty n]
+  {C D : Matrix n n ℝ} (hC : ∀ (i j : n), 0 < C i j) (hD : MissedUpdates.Matrices.Nonnegative D) {lam : ℝ}
+  (hlam : 0 < lam) (F : MissedUpdates.Matrices.Frame (lam⁻¹ • C)) {m q k : ℕ} (hm : 1 ≤ m) (hq : 0 < q)
+  (hk : m * (q + 1) ≤ k) {e : ℝ}
+  (ht : MissedUpdates.Matrices.RelativeTail (lam⁻¹ • C) (MissedUpdates.Matrices.outer F.right F.left) q e) :
+  max 0 (Real.log (MissedUpdates.Matrices.cutoffSup F (lam⁻¹ • D) m q) + Real.log (1 - e)) ≤
+      ↑k * Real.log (MissedUpdates.Matrices.constrainedRate C D m k / lam) ∧
+    ↑k * Real.log (MissedUpdates.Matrices.constrainedRate C D m k / lam) ≤
+      ↑k / ↑(k - m * q) *
+          (Real.log (MissedUpdates.Matrices.cutoffSup F (lam⁻¹ • D) m q) + ↑(m - 1) * Real.log ((1 + e) / (1 - e))) +
+        ↑m * Real.log (1 + e)
+MissedUpdates.Matrices.all_later_windows_accuracy.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] [Nonempty n]
+  {B E : Matrix n n ℝ} (F : MissedUpdates.Matrices.Frame B) (hB : ∀ (i j : n), 0 < B i j)
+  (hE : MissedUpdates.Matrices.Nonnegative E) {m q k0 : ℕ} (hm : 1 ≤ m) (hq : 0 < q) (hk0 : m * (q + 1) ≤ k0)
+  (hk02 : 2 * (m * q) ≤ k0) {e : ℝ}
+  (ht : MissedUpdates.Matrices.RelativeTail B (MissedUpdates.Matrices.outer F.right F.left) q e) (hehalf : e ≤ 1 / 2)
+  {H delta : ℝ} (hH : Real.log (MissedUpdates.Matrices.clusterSup F E m) ≤ H) (hdelta : 0 < delta)
+  (he : 6 * ↑m * e ≤ delta) (hsize : 4 * ↑(m * q) * H ≤ ↑k0 * delta) (k : ℕ) :
+  k ≥ k0 →
+    |↑k * Real.log (MissedUpdates.Matrices.constrainedRate B E m k) -
+          Real.log (MissedUpdates.Matrices.clusterSup F E m)| ≤
+      delta
+structure MissedUpdates.Matrices.RelativeTail.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] (B P : Matrix n n ℝ)
+  (q : ℕ) (e : ℝ) : Prop
+number of parameters: 7
+fields:
+  MissedUpdates.Matrices.RelativeTail.error_nonneg : 0 ≤ e
+  MissedUpdates.Matrices.RelativeTail.error_lt_one : e < 1
+  MissedUpdates.Matrices.RelativeTail.lower : ∀ g ≥ q, MissedUpdates.Matrices.EntrywiseLE ((1 - e) • P) (B ^ g)
+  MissedUpdates.Matrices.RelativeTail.upper : ∀ g ≥ q, MissedUpdates.Matrices.EntrywiseLE (B ^ g) ((1 + e) • P)
+constructor:
+  MissedUpdates.Matrices.RelativeTail.mk.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] {B P : Matrix n n ℝ} {q : ℕ}
+    {e : ℝ} (error_nonneg : 0 ≤ e) (error_lt_one : e < 1)
+    (lower : ∀ g ≥ q, MissedUpdates.Matrices.EntrywiseLE ((1 - e) • P) (B ^ g))
+    (upper : ∀ g ≥ q, MissedUpdates.Matrices.EntrywiseLE (B ^ g) ((1 + e) • P)) :
+    MissedUpdates.Matrices.RelativeTail B P q e
 def MissedUpdates.Matrices.constrainedRate.{u_1} : {n : Type u_1} →
   [Fintype n] → [DecidableEq n] → Matrix n n ℝ → Matrix n n ℝ → ℕ → ℕ → ℝ :=
 fun {n} [Fintype n] [DecidableEq n] B E m k => Filter.limsup (MissedUpdates.Matrices.rootPrefixSup B E m k) Filter.atTop

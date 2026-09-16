@@ -20,6 +20,7 @@ NEGATIVE_CONTROLS = {
     'RejectFalseGain': ('unsolved goals', 'could not prove'),
     'RejectShiftedCoefficient': ('Type mismatch',),
     'RejectMissingStrictPositivity': ('Application type mismatch',),
+    'RejectShortQuantitativeWindow': ('unsolved goals', 'could not prove'),
 }
 
 
@@ -156,6 +157,7 @@ def main():
     run([lake, 'env', 'lean', '--trust=0', 'MainAudit.lean'], 'main-trust-zero.txt')
     run([lake, 'env', 'lean', '--trust=0', 'checks/PositiveControl.lean'], 'positive-control.txt')
     run([lake, 'env', 'lean', '--trust=0', 'checks/MainConsumer.lean'], 'main-consumer.txt')
+    run([lake, 'env', 'lean', '--trust=0', 'checks/QuantitativeConsumer.lean'], 'quantitative-consumer.txt')
     for name, reasons in NEGATIVE_CONTROLS.items():
         run([lake, 'env', 'lean', '--trust=0', f'checks/{name}.lean'], name+'.txt', expected_failure=reasons)
 
@@ -167,9 +169,17 @@ def main():
               ROOT/'lean-toolchain',ROOT/'check.py', *sorted((ROOT/'checks').glob('*.lean'))]
     receipt = {
         'status': 'PASS',
-        'scope': 'Full fixed-budget cluster growth law for strictly positive finite matrices',
+        'scope': 'Full fixed-budget cluster law and quantitative finite-window implications under certified relative-tail data',
         'full_growth_rate_theorem_formalized': True,
         'main_theorem': MAIN_THEOREM,
+        'quantitative_theorems': [
+            'MissedUpdates.Matrices.clusterSup_le_cutoff',
+            'MissedUpdates.Matrices.original_finite_window_rate_bounds',
+            'MissedUpdates.Matrices.coefficient_error_bounds',
+            'MissedUpdates.Matrices.all_later_windows_accuracy',
+        ],
+        'quantitative_certificate_assumptions': 'Uniform two-sided entrywise relative tail, 0<=error<1, and explicit window/scalar conditions',
+        'quantitative_classical_boundary': 'Automatic minorization-tail construction and O(log(k)/k) corollary are not separately Lean-formalized',
         'checked_at_utc': datetime.now(timezone.utc).isoformat(),
         'rate_definition': 'limsup_N sup over infinite admissible sequences of matrix norm^(1/N)',
         'matrix_norm': 'elementwise maximum norm',

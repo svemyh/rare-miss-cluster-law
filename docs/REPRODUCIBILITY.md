@@ -6,7 +6,7 @@ Use `make check-lean`. The current project requires Lean 4.32.2 and mathlib comm
 
 Install the pinned toolchain, run `lake update` and `lake exe cache get` inside `lean/`, then run the checker. `LEAN_BIN_DIR` can select an existing directory containing the matching `lean` and `lake` binaries. Caches and toolchains are not committed.
 
-The checker verifies dependency identities, rebuilds the project, audits all theorem declarations with `--trust=0`, prints the main theorem's definitions, compiles a separate consumer, and rejects four invalid proof controls. Their expected failures concern an illegal protocol, a false gain, a shifted coefficient and missing strict positivity.
+The checker verifies dependency identities, rebuilds the project, audits all theorem declarations with `--trust=0`, prints the main theorem's definitions, compiles a separate consumer, and rejects five invalid proof controls. Their expected failures concern an illegal protocol, a false gain, a shifted coefficient, missing strict positivity and an insufficient quantitative window.
 
 The logical axioms are `propext`, `Classical.choice`, and `Quot.sound`. Verification also relies on the Lean kernel, runtime and hardware functioning correctly. The formal norm is the elementwise maximum norm. Not every separate manuscript proposition has been formalized.
 
@@ -21,3 +21,9 @@ The logical axioms are `propext`, `Classical.choice`, and `Quot.sound`. Verifica
 Committed Lean receipt paths are relative to `lean/`; manuscript receipt paths are relative to `paper/`. The packaged PDF's hash and inspected page list are in `evidence/manuscript/`. New runs write ignored outputs to `build/` directories.
 
 `make check-package` verifies the Git-tracked inventory, portable Markdown links, evidence hashes, frozen inputs and common accidental secret/cache inclusions. It is not an exhaustive secret detector. No automatic GitHub Actions workflow is installed.
+
+## Quantitative certificate tool
+
+Run `make check-quantitative` for nine tests, matching normal/isolated-optimized reports, and certificate replay. Inputs are exact rational normalized positive matrices, an exact rational Perron frame, and a positive nominal scale. Floating values are rejected. The fixture reuses the existing reset example; its sufficient certificate proves stability at k=10 without claiming that this is the true minimum k=8.
+
+The generated accuracy certificate guarantees scaled-coefficient error at most 1/10 for every k>=129 for that fixture. This is a conservative sufficient threshold. The generic finite-window and accuracy implications are Lean-checked; the automatic all-powers minorization-tail argument remains classical. The tool also has explicit enumeration and arithmetic resource limits.

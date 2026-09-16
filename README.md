@@ -15,11 +15,13 @@ The Sⱼ are Perron-weighted suprema over every finite integer-gap cluster conta
 
 - [Paper PDF](paper/rare_misses.pdf) and [editable LaTeX](paper/rare_misses.tex).
 - [Main Lean theorem](lean/MissedUpdates/Main.lean) and [proof map](lean/README.md).
+- [Quantitative bounds](QUANTITATIVE.md), [Lean finite-window theorem](lean/MissedUpdates/Quantitative.lean), and [exact certificate](evidence/quantitative/reset-certificate.json).
 - [Audit receipt](evidence/lean/receipt.json) and [raw kernel output](evidence/lean/main-trust-zero.txt).
 - [Classical theorem](THEOREM.md), [exact examples](EXAMPLES.md), and [internal mathematical review](review.md).
-- [Literature assessment](literature-audit/AUDIT.md) and [scope/status](docs/RESEARCH_STATUS.md).
+- [Current literature follow-up](literature-audit/REMAINING-GAPS.md), [earlier broad audit](literature-audit/AUDIT.md), and [scope/status](docs/RESEARCH_STATUS.md).
+- [Pending specialist reviews](review/REVIEW_COORDINATION.md) and [coordinator semantic audit](review/SEMANTIC_SELF_AUDIT.md).
 
-The full formalization checks 175 exported declarations at Lean trust level zero. It uses only `propext`, `Classical.choice`, and `Quot.sound`, with no proof placeholders or custom mathematical axioms. Four invalid proof controls are required to fail. Positivity-to-Perron convergence, the canonical matrix bound, and both limiting inequalities are connected in the final theorem.
+The current formalization checks 201 exported declarations, including 26 new quantitative declarations, at Lean trust level zero. It uses only `propext`, `Classical.choice`, and `Quot.sound`, with no proof placeholders or custom mathematical axioms. Five invalid controls must fail. The main law, genuine cutoff comparison, two-sided finite-window bounds and an all-later-windows accuracy implication are checked. The quantitative implications require certified relative-tail data. The automatic minorization-tail construction and big-O corollary have classical proofs but are not separately Lean-formalized.
 
 ## Reproduce
 
@@ -27,6 +29,7 @@ Python 3 is sufficient for the exact checks and package audit:
 
 ```sh
 make check-exact
+make check-quantitative
 make check-package
 ```
 
@@ -40,7 +43,7 @@ cd ..
 make check-lean
 ```
 
-`make check` runs all three checks. The proof checker verifies dependency commits, all 20 vendored proof hashes, the full axiom inventory, a separate theorem consumer, and the invalid controls. Replays write new evidence to `lean/build/`; committed snapshots are in `evidence/lean/`.
+`make check` runs all four checks. The proof checker verifies dependency commits, all 20 vendored proof hashes, the full axiom inventory, a separate theorem consumer, and the invalid controls. Replays write new evidence to `lean/build/`; committed snapshots are in `evidence/lean/`.
 
 With Tectonic and Poppler installed, `make paper` rebuilds the PDF, checks its references, renders every page, and reruns the exact checks. Its outputs go to `paper/build/`; `paper/rare_misses.pdf` is the inspected package copy. See [reproducibility notes](docs/REPRODUCIBILITY.md).
 

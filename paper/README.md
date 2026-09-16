@@ -1,9 +1,11 @@
-# Manuscript
+# Publication-focused manuscript
 
-[Read the packaged PDF](rare_misses.pdf). Editable inputs are `rare_misses.tex` and `references.bib`.
+[Read the revised PDF](rare_misses.pdf). Source and bibliography are rare_misses.tex and references.bib.
 
-The main law has a complete [Lean proof](../lean/README.md). This packaged manuscript's status paragraphs acknowledge that result. Additional examples and finite-search propositions remain classical results with finite checks. Publication novelty, authorship and human specialist review remain unresolved.
+The revision makes uniform cluster packing the first part of the main proof, adds an effective finite-cutoff and two-sided finite-window theorem, and gives a full definition-to-Lean map with upstream attribution. The prescribed-gap and reset examples remain because they explain limitations of the result.
 
-From the repository root, `make paper` writes a fresh PDF, extracted text, rendered pages and receipt to `paper/build/`. The committed PDF is the visually inspected package copy. Its records are in [evidence/manuscript](../evidence/manuscript/receipt.json).
+The main law and quantitative implications under relative-tail data are checked in the [Lean development](../lean/README.md). The automatic minorization tail, big-O corollary and additional examples are not all separately formalized. [QUANTITATIVE.md](../QUANTITATIVE.md) gives the derivation and boundary.
 
-The reviewer brief and source-access notes are preparation documents only. Nothing has been submitted or sent to reviewers. The optional `build.py --package-only` operation produces a smaller manuscript-only ZIP after a recorded visual review; it does not replace this repository.
+Run make paper from the repository root to rebuild with Tectonic and Poppler. Fresh outputs are in paper/build/; the committed PDF is the visually inspected copy. [Verification evidence](../evidence/manuscript/receipt.json) is separate from human review.
+
+Publication novelty, human specialist reviews, authorship and venue remain open. [Review coordination](../review/REVIEW_COORDINATION.md) records candidates, not appointed reviewers. No manuscript has been sent or submitted.

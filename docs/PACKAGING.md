@@ -4,7 +4,7 @@ Included: current Lean source and locked manifests, upstream licenses, raw proof
 
 Excluded: build caches, downloaded toolchains, compiled objects, full copies/extracts of third-party papers, failed-access responses, redundant ZIPs, internal task/session records, private machine paths, credentials, and unrelated workspace contents.
 
-The proof source and verification logic have no mathematical changes. Repository-facing documentation uses portable paths. The manuscript's status disclosures now acknowledge the completed Lean proof; its mathematical exposition is unchanged. Original workspace artifacts remain preserved outside this repository.
+The publication revision preserves the original main theorem and frozen checker, adds separate quantitative proof modules and an exact rational certificate tool, and rewrites the manuscript around packing, effective bounds and a proper formalization section. The original package remains available at its baseline Git commit. Repository-facing documentation uses portable paths.
 
 Source-download filenames mentioned in the historical literature notes refer to the original reading workspace; downloaded papers are deliberately omitted. Source identifiers, authored comparisons and explicit access gaps remain available.
 

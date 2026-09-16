@@ -9,8 +9,8 @@
   "manual_visual_review": "Separate record required in VERIFICATION.md and build/qa-review.json",
   "manuscript_sha256": {
     "build.py": "6e849da4703f45d67a38d0b83dd9ead40e0837696bc23dc8afc04ebd6338527d",
-    "rare_misses.tex": "cfc1d8ea0e5f9c70d7dd33a3217d8e8ba2b59a0f9f3473e658f5e77de11bcfca",
-    "references.bib": "ad6c0c58b80903c74a1cb24109b94599e1ccc52812f356dbba63ae5800cd14cd"
+    "rare_misses.tex": "b3d3035264df3f5269bb75565117420e01565e37340d023d182df16b89dba26e",
+    "references.bib": "875e48fd47d3fa43a8e0e2689b6d63c5164ba557fbd6ef0b84fbb9e313cc8284"
   },
   "negative_controls_rejected": [
     "corrupted_planar_coefficient",
@@ -19,8 +19,8 @@
   ],
   "normal_optimized_receipts_identical": true,
   "overfull_or_unresolved_reference_messages": [],
-  "pages": 7,
-  "pdf_sha256": "80c1e1ce244e2741c4506ad9ef7ac88a03a7615958f9bb11f9bc3fe8de5d1700",
+  "pages": 11,
+  "pdf_sha256": "767d0710b801ca10452cb2bff2b635a592c7f4613585e4bb00572184be1cf339",
   "publication_novelty": "Provisional",
   "reset_cases": 7767,
   "scope": "Build, text/reference checks, rendered-page presence and frozen finite arithmetic; not a formal proof",

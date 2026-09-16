@@ -4,9 +4,10 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{microtype}
+\usepackage{array}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,
-  pdftitle={Rare-miss growth under sliding-window constraints},pdfauthor={}}
+  pdftitle={Rare-miss growth: a finite-cluster law and certified bounds},pdfauthor={}}
 \setlength{\emergencystretch}{1.5em}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -19,66 +20,83 @@
 \newcommand{\ones}{\mathbf 1}
 \newcommand{\transpose}{^{\mathsf T}}
 \DeclareMathOperator{\spr}{spr}
-\title{Rare-miss growth under sliding-window constraints}
+\title{Rare-miss growth: a finite-cluster law and certified bounds}
 \author{}
-\date{Working draft, 15 September 2026}
+\date{Revised working draft, 16 September 2026}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-We consider products of two fixed strictly positive matrices under the rule
-that every window of $k$ factors contains at most $m$ occurrences of a
-designated miss mode. With dimension and $m$ fixed, we identify the first-order
-correction to the logarithmic worst-case growth rate as $k$ tends to infinity.
-The coefficient is the logarithm of the largest Perron-weighted gain of a
-cluster containing at most $m$ misses. A uniform cluster-packing argument
-gives the upper bound, and periodic products give the matching lower bound.
-We also give a finite-search enclosure for the coefficient and examples
-showing that optimal pair gaps cannot be restricted to a dimension-independent
-finite list. A rank-one reset example illustrates why period-$k$ witnesses
-need not be optimal at finite $k$.
+We study products of fixed strictly positive matrices when every window of
+$k$ factors contains at most $m$ occurrences of a designated miss mode.
+For fixed dimension and $m$, a uniform cluster-packing argument identifies
+the first-order logarithmic growth correction as the largest Perron-weighted
+gain of a cluster with at most $m$ misses. The argument covers all admissible
+words. A realizable finite-gap cutoff then gives certified two-sided bounds
+at finite $k$, an effective accuracy threshold, and an $O(\log k/k)$ error
+bound for the scaled coefficient. We formalize the main law and the
+finite-window implications in Lean, with explicit correspondence between
+the mathematical and formal definitions. Examples explain why no
+dimension-independent list of pair gaps suffices and why the lower-bound
+periodic witnesses need not be finite-window optimizers.
 \end{abstract}
 
-\noindent\textbf{Draft status.} Priority assessment is incomplete.
-The underlying AI-assisted arguments have received internal automated
-mathematical review. The main cluster law now has a kernel-checked Lean proof
-in the accompanying repository. The additional propositions have not all been
-formalized. External specialist review and author metadata remain pending.
+\noindent\textbf{Draft status.} The main law and the conditional finite-window
+implications have kernel-checked Lean proofs. The automatic minorization-tail
+construction and the additional example propositions are not all formalized.
+Publication priority, human specialist review, and author metadata remain pending.
+The manuscript and proof development used AI assistance.
 
 \section{Introduction and scope}
 
-Missed updates in a discrete-time system can be represented by a restricted
-switching sequence. A sliding-window rule limits the number of misses in
-every prescribed number of slots. It is stronger than a restriction on
-asymptotic average frequency, and it still permits short bursts.
-Constrained switching has exact spectral and multinorm descriptions
-\cite{kozyakin2014,philippe2016}; weakly-hard control also admits useful
-scalar convergence-rate abstractions \cite{gaukler2020}.
+A sliding-window loss rule controls local bursts, not only average loss
+frequency. We ask how worst-case product growth changes when the window
+becomes large while the matrices and the allowed number of misses remain
+fixed. Periodic products supply lower bounds, but the central difficulty is
+a matching estimate uniform over every admissible word.
 
-Here the window size varies while the matrices and miss budget remain fixed.
-We determine the coefficient of the resulting $k^{-1}$ correction for
-strictly positive modes. The main issue is an upper bound uniform over
-\emph{all} admissible words. Evaluating a collection of periodic words
-provides lower bounds but does not settle this uniform comparison.
+The key observation is combinatorial. Join nearby misses into clusters and
+assign each cluster to a bin determined by its first miss. With bin length
+$k-mq$, the original $k$-window rule bounds the \emph{total} number of misses
+in all clusters assigned to one bin by $m$. Perron separation converts the
+matrix product into cluster gains; a joining argument bounds their product
+within each bin by one finite-cluster supremum. Charging each miss
+independently would lose this budget-sharing information.
 
-Rank-one product identities and maximum-cycle methods are established
-\cite{ahmadi2012,liuxiao2013}. Perron pairings also occur in first-order
-slow-switching expansions for periodic and random environments
-\cite{monmarche2025}. The latter hold in a regime that stretches retained
-environmental intervals with fixed occupation proportions. Our miss
-clusters can have fixed duration, and the optimization ranges over a hard
-sliding-window language. Hybrid singular-perturbation theory provides
-further related reduced-system limits \cite{haidar2026}, but its timing
-hypotheses do not directly supply the packing comparison used here.
+The fixed-language setting has established spectral and multinorm
+representations \cite{kozyakin2014,kozyakin2019,philippe2016}. In particular,
+Kozyakin--Kuznetsov--Chebotarev \cite[Sections 3.3--3.5]{kozyakin2019}
+recodes block-frequency constraints as a finite-type language and obtains
+periodic spectral representation. Those results leave the cycle supremum
+to be evaluated as the window varies. Weakly-hard control also has scalar
+rate abstractions \cite{gaukler2020} and nonlinear sufficient stability
+criteria \cite{hertneck2020}; these are not an equality for the present
+matrix growth coefficient. Conditional-average variational results
+\cite{zhao2014} concern a different constraint.
 
-The result below concerns fixed strictly positive discrete matrices.
-It is not a theorem for arbitrary signed modes, growing miss budgets,
-continuous intersample safety, or nonlinear plants. Nor does it assert
-that every matrix pair is realizable by a particular feedback/dropout
-architecture. The exact reset calculation in Section~\ref{sec:reset}
-is presented as an application of established rank-one machinery.
-No first-in-literature claim is made in this draft; the remaining review
-obligations are recorded in Section~\ref{sec:status}.
+Rank-one identities and maximum-cycle methods are established
+\cite{ahmadi2012,liuxiao2013}. Perron pairings also occur in slow-switching
+expansions \cite{monmarche2025}, where retained environmental durations
+are stretched under a specified periodic or random law. Here short miss
+clusters coexist with a hard adversarial window constraint. Related
+hybrid singular-perturbation results \cite{haidar2026} do not directly
+supply that packing comparison.
+
+We prove the cluster law, then obtain a quantitative strengthening by
+clamping every long gap to a fixed \emph{realizable} gap. The resulting
+maximum is attained by a finite word, providing an effective lower witness
+as well as an upper enclosure. The Lean development verifies the main
+law, the cutoff comparison, both finite-window inequalities, and an
+all-later-windows accuracy implication. Section~\ref{sec:formal}
+separates imported results, checked statements and classical-only steps.
+
+The scope is fixed strictly positive discrete matrices and fixed miss
+budget. We make no claim for arbitrary signed modes, growing budgets,
+nonlinear plants or continuous intersample safety, and do not assume that
+every matrix pair is realizable by a particular feedback architecture.
+The examples explain limitations of the general conclusion. Publication
+novelty remains provisional; the unclosed source and human-review gates
+are listed in Section~\ref{sec:status}.
 
 \section{The cluster law}
 
@@ -96,7 +114,9 @@ $A_0=D$, and define the constrained growth rate
  \sup_{\sigma\in\Sigma_{m,k}}
  \left\|A_{\sigma_{N-1}}\cdots A_{\sigma_0}\right\|^{1/N}.
 \end{equation}
-Any fixed matrix norm gives the same rate. Put
+For definiteness, take the elementwise maximum norm, as in the formal
+statement. Standard finite-dimensional norm equivalence shows that any
+other fixed matrix norm gives the same rate. Put
 \[
  \lambda=\spr(C),\qquad B=C/\lambda,\qquad E=D/\lambda.
 \]
@@ -135,6 +155,37 @@ The theorem does not identify an exactly maximizing word at each finite
 window size.
 
 \section{Proof of Theorem~\ref{thm:main}}
+
+\subsection{Uniform cluster packing}
+
+Choose an integer $q=q(k)$ with $q\to\infty$ and $q/k\to0$, for instance
+$q=\lfloor\sqrt{k}\rfloor$. Take $k$ large enough that $mq+1\le k$,
+and set $L=k-mq>0$. In a finite prefix of an admissible sequence, join
+successive misses into the same cluster whenever fewer than $q$ successes
+lie between them.
+
+\begin{lemma}[Window packing]\label{lem:packing}
+Each cluster has at most $m$ misses and spans at most $mq$ slots.
+Assign a cluster to the integer bin $[tL,(t+1)L-1]$ containing its first
+miss. All clusters assigned to one bin contain at most $m$ misses in total.
+\end{lemma}
+\begin{proof}
+If one cluster contained $m+1$ misses, the span from the first to the last,
+including both endpoints, would be at most
+\[m(q-1)+(m+1)=mq+1\le k,\]
+contradicting the budget. A cluster of at most $m$ misses spans no more
+than $(m-1)q+1\le mq$ slots.
+
+A cluster starting in bin $t$ ends no later than
+\[
+ (t+1)L-1+(mq-1)=tL+k-2<tL+k.
+\]
+Consequently every miss in every cluster assigned to bin $t$ belongs
+to the same $k$-window $[tL,tL+k-1]$. That window has at most $m$ misses.
+If it extends beyond the chosen prefix, use the original infinite
+admissible sequence. Truncating the final cluster of a prefix does not
+increase its span or count.
+\end{proof}
 
 \subsection{Perron separation and joining}
 
@@ -178,36 +229,8 @@ $PWP=(\ell\transpose Wr)P$ factors the limiting gain.
 This argument uses a supremum, not attainment of a maximizing gap tuple.
 \end{proof}
 
-\subsection{A uniform packing bound}
+\subsection{The uniform matrix-product bound}
 
-Choose an integer $q=q(k)$ with $q\to\infty$ and $q/k\to0$, for instance
-$q=\lfloor\sqrt{k}\rfloor$. Take $k$ large enough that $mq+1\le k$,
-and set $L=k-mq>0$. In a finite prefix of an admissible sequence, join
-successive misses into the same cluster whenever fewer than $q$ successes
-lie between them.
-
-\begin{lemma}[Window packing]\label{lem:packing}
-Each cluster has at most $m$ misses and spans at most $mq$ slots.
-Assign a cluster to the integer bin $[tL,(t+1)L-1]$ containing its first
-miss. All clusters assigned to one bin contain at most $m$ misses in total.
-\end{lemma}
-\begin{proof}
-If one cluster contained $m+1$ misses, the span from the first to the last,
-including both endpoints, would be at most
-\[m(q-1)+(m+1)=mq+1\le k,\]
-contradicting the budget. A cluster of at most $m$ misses spans no more
-than $(m-1)q+1\le mq$ slots.
-
-A cluster starting in bin $t$ ends no later than
-\[
- (t+1)L-1+(mq-1)=tL+k-2<tL+k.
-\]
-Consequently every miss in every cluster assigned to bin $t$ belongs
-to the same $k$-window $[tL,tL+k-1]$. That window has at most $m$ misses.
-If it extends beyond the chosen prefix, use the original infinite
-admissible sequence. Truncating the final cluster of a prefix does not
-increase its span or count.
-\end{proof}
 
 Let $W$ be a normalized length-$N$ product and let $z$ be its number of
 misses. Disjoint full $k$-blocks and one final fragment give
@@ -233,7 +256,7 @@ This is a bound on every admissible word.
 
 Fix $k,q$ first. Taking suprema, $N$th roots and the long-product
 limit superior in \eqref{eq:word-upper} yields
-\begin{equation}\label{eq:finite-upper}
+\begin{equation}\label{eq:rate-upper}
  \log\frac{\rho_{m,k}}{\lambda}
  \le\frac{\log M_m}{k-mq}+\frac{m}{k}\log(1+\varepsilon_q).
 \end{equation}
@@ -246,63 +269,186 @@ $\varepsilon_q\to0$,
 
 \subsection{Matching periodic lower witnesses}
 
-Fix any finite cluster $K$ with $j\le m$ misses and length $a$.
-For each $k>a$, repeat a length-$k$ word whose normalized period
-product is $B^{k-a}K$. Every cyclic $k$-window has exactly $j$ misses.
-The infinite repetition is admissible, and repeated periods give
+Fix a finite cluster $W$ with $j\le m$ misses, length $a$, and gain
+$s=\ell\transpose Wr>0$. Repeat this cluster followed by $k$ successes.
+The period is $k+a\ge k$. Residues modulo the period are distinct within
+any $k$-window, so that window has at most $j$ misses. The sequence is
+therefore admissible. Its period matrix is $Q_k=B^kW$, and
 \[
- \frac{\rho_{m,k}}{\lambda}\ge
-       \spr(B^{k-a}K)^{1/k}.
+ Q_kr\longrightarrow PWr=sr.
 \]
-As $k\to\infty$, the period product tends to $PK$. Its nonzero
-eigenvalue is $\ell\transpose Kr>0$. Continuity of spectral radius gives
+For every $0<t<s$, positivity of $r$ gives $Q_kr\ge tr$ for all sufficiently
+large $k$. Nonnegative multiplication then gives $Q_k^Nr\ge t^Nr$.
+Using the norm/gain comparison and the repeated-period subsequence in the
+rate definition yields
 \[
- \liminf_{k\to\infty}k\log\frac{\rho_{m,k}}{\lambda}
-       \ge\log(\ell\transpose Kr).
+ \rho_{m,k}/\lambda\ge t^{1/(k+a)},\qquad
+ \liminf_{k\to\infty}k\log(\rho_{m,k}/\lambda)\ge\log t.
 \]
-This holds separately for every fixed finite cluster. Taking the
-supremum over its gaps, the finite maximum over $j\le m$, and including
-the all-success word gives the lower bound $\log M_m$. Together with
-\eqref{eq:upper-limit}, this proves Theorem~\ref{thm:main}.
-No exchange of a varying maximizing cluster with the $k$-limit is used.
+Let $t$ increase to $s$, take the supremum over each fixed finite cluster,
+and include the all-success lower bound. The result is $\log M_m$.
+Together with the uniform upper bound, this proves Theorem~\ref{thm:main}.
+No varying maximizing word is interchanged with the $k$-limit, and no
+spectral-radius continuity theorem is needed for this argument.
 
-\section{Finite enclosure of the coefficient}
+\section{Certified finite-window bounds}\label{sec:quant}
 
-The supremum in \eqref{eq:cluster-values} can be enclosed by a finite
-calculation when a Perron tail bound is available.
-
-\begin{proposition}[Truncation with limiting gaps]\label{prop:truncate}
-Suppose $G\ge1$ and $\varepsilon\ge0$ satisfy
-$B^g\le(1+\varepsilon)P$ entrywise for every $g\ge G$. Let
-\[\mathcal F_G=\{I,B,\ldots,B^{G-1},P\}.\]
-Let $T_j$ be the maximum gain obtained by replacing the $j-1$ gap
-factors in a $j$-miss cluster by elements of $\mathcal F_G$, and put
-$T=\max(1,T_1,\ldots,T_m)$. Then
-\begin{equation}\label{eq:truncate}
- T\le M_m\le(1+\varepsilon)^{m-1}T.
+The asymptotic law does not say how large $k$ must be. A two-sided Perron
+tail makes the approximation effective. Fix integers $m,q\ge1$ and a
+certified $0\le\varepsilon<1$ such that, entrywise,
+\begin{equation}\label{eq:two-tail}
+ (1-\varepsilon)P\le B^g\le(1+\varepsilon)P\qquad(g\ge q).
 \end{equation}
-\end{proposition}
-\begin{proof}
-Every occurrence of $P$ is the limit of a success power. Replacing all
-such occurrences by $B^h$ and taking $h\to\infty$ shows that each
-finite-search value lies in the closure of genuine cluster values.
-This proves $T\le M_m$.
+Put $R=(1+\varepsilon)/(1-\varepsilon)$ and define the genuine finite maximum
+\begin{equation}\label{eq:cutoff}
+ A_m(q)=\max\left\{1,\ \max_{1\le j\le m}\
+   \max_{\boldsymbol g\in\{0,\ldots,q\}^{j-1}}
+       \ell\transpose K_j(\boldsymbol g)r\right\}.
+\end{equation}
+Unlike a search containing the ideal projector $P$, every candidate here
+is realizable by a finite word. There are
+$1+\sum_{j=1}^m(q+1)^{j-1}$ candidates before duplicate values are removed.
 
-Conversely, in any genuine cluster replace each gap power with exponent
-at least $G$ by $(1+\varepsilon)P$. There are at most $j-1$ such
-factors. Positivity gives an upper bound of
-$(1+\varepsilon)^{j-1}T_j\le(1+\varepsilon)^{m-1}T$.
-Take the appropriate suprema and maximum.
+\begin{lemma}[Attained cutoff]\label{lem:cutoff}
+Under \eqref{eq:two-tail},
+\[
+ 1\le A_m(q)\le M_m\le R^{m-1}A_m(q).
+\]
+A maximizing word can be chosen with at most $m$ misses and length at most
+$m+(m-1)q$, allowing the empty word for the value $1$.
+\end{lemma}
+\begin{proof}
+For $g\ge q$, the two tail inequalities imply
+$B^g\le(1+\varepsilon)P\le R B^q$. For $g\le q$, nonnegativity and
+$R\ge1$ give $B^g\le RB^g$. Clamp each gap to $\min(g,q)$ and multiply
+these entrywise inequalities through nonnegative factors. A $j$-miss
+cluster has $j-1$ gaps, hence gain at most $R^{j-1}A_m(q)$.
+The empty-word contribution is also bounded by $R^{m-1}A_m(q)$.
+Taking suprema gives the upper comparison. Every cutoff candidate is
+already allowed in $M_m$, giving the lower one. The finite maximum is
+attained, and a $j$-miss candidate has length at most $j+(j-1)q$.
 \end{proof}
 
-The logarithmic interval has width at most
-$(m-1)\log(1+\varepsilon)$. Enumeration uses at most
-$\sum_{j=1}^m(G+1)^{j-1}$ labeled cases. Rational data and a rational
-tail certificate permit exact arithmetic. Obtaining certified Perron
-data and an all-tail bound for general inputs is a separate task;
-a floating eigendecomposition or a finite sample of tail powers is
-not such a certificate. A candidate containing $P$ is generally a
-limiting witness, not a realizable finite-$k$ product.
+Write $\Xi_{m,k}=k\log(\rho_{m,k}/\lambda)$.
+\begin{theorem}[Two-sided finite-window enclosure]\label{thm:finite}
+Suppose \eqref{eq:two-tail} holds and $k\ge m(q+1)$. Then
+\begin{align}
+ \max\{0,\log A_m(q)+\log(1-\varepsilon)\}
+ &\le\Xi_{m,k},\label{eq:finite-lower}\\
+ \Xi_{m,k}&\le
+ \frac{k}{k-mq}\bigl(\log A_m(q)+(m-1)\log R\bigr)
+       +m\log(1+\varepsilon).\label{eq:finite-upper}
+\end{align}
+\end{theorem}
+\begin{proof}
+Choose an attaining word $W$ of length $a\le m+(m-1)q$. The hypothesis
+ensures $k-a\ge q$. Repeat $W$ followed by $k-a$ successes. Each
+$k$-window is one period and contains at most $m$ misses. Its period
+matrix $Q=B^{k-a}W$ satisfies
+\[
+ Qr\ge(1-\varepsilon)PWr=(1-\varepsilon)A_m(q)r.
+\]
+Iteration, the norm/gain comparison and the rate definition yield
+\eqref{eq:finite-lower}, together with the all-success sequence.
+For the upper bound, \eqref{eq:rate-upper} and Lemma~\ref{lem:cutoff}
+give \eqref{eq:finite-upper}. In particular, the upper bound applies to
+all admissible products, not only the lower witness.
+\end{proof}
+
+\subsection{Error and a certified accuracy threshold}
+
+Let $H=\log M_m\ge0$. The proof also gives
+\begin{equation}\label{eq:error}
+ -\bigl((m-1)\log R-\log(1-\varepsilon)\bigr)
+ \le\Xi_{m,k}-H
+ \le\frac{mq}{k-mq}H+m\log(1+\varepsilon).
+\end{equation}
+For $\varepsilon\le1/2$, $k\ge\max\{m(q+1),2mq\}$, and any verified
+$\overline H\ge H$, the elementary logarithmic inequalities imply
+\begin{equation}\label{eq:simple-error}
+ -(3m-1)\varepsilon\le\Xi_{m,k}-H
+       \le\frac{2mq\,\overline H}{k}+m\varepsilon.
+\end{equation}
+Indeed $\log(1+\varepsilon)\le\varepsilon$ and
+$-\log(1-\varepsilon)\le2\varepsilon$.
+
+Given $\delta>0$, choose $q$ with
+$\varepsilon\le\min\{1/2,\delta/(6m)\}$ and set
+\begin{equation}\label{eq:k0}
+ k_0=\max\left\{m(q+1),\ 2mq,\ 1,\
+                 \left\lceil\frac{4mq\,\overline H}{\delta}\right\rceil\right\}.
+\end{equation}
+Then $|\Xi_{m,k}-H|\le\delta$ for \emph{every} integer $k\ge k_0$.
+The lower error is at most $\delta/2$ and the upper error at most
+$2\delta/3$. This is a sufficient threshold, not the smallest one.
+
+A computable upper bound on $H$ does not require evaluating logarithms.
+If $c\ge1$ and $Er\le cr$, induction gives $M_m\le c^m$, hence
+$H\le m(c-1)$. The cutoff supplies another bound,
+\[
+ H\le A_m(q)-1+(m-1)(R-1).
+\]
+One may use the smaller of these two bounds. A cutoff used to bound $H$
+need not be the cutoff subsequently chosen for the accuracy tolerance.
+
+\subsection{An explicit all-powers tail}
+
+The following classical construction supplies \eqref{eq:two-tail} from
+positive normalized data. Set
+\[
+ \pi_i=\ell_i r_i,\quad \pi_* =\min_i\pi_i,\quad
+ \eta=\min_{i,j}\frac{B_{ij}}{P_{ij}},\quad
+ \alpha=\eta/2,\quad \theta=1-\alpha.
+\]
+The fixed-vector identities imply $0<\eta\le1$, since each row of
+$B_{ij}/P_{ij}$ has weighted average $1$ with weights $\pi_j$.
+Let $T=(B-\alpha P)/\theta$. It is nonnegative, fixes the Perron vectors,
+and satisfies $TP=PT=P$. Induction gives
+\[
+ B^g=P+\theta^g(T^g-P).
+\]
+From $T^gr=r$ and nonnegativity,
+$0\le(T^g)_{ij}/P_{ij}\le1/\pi_j$. Therefore a global relative tail is
+\begin{equation}\label{eq:explicit-tail}
+ \varepsilon_q=\theta^q/\pi_*,\qquad
+ \left|\frac{(B^g)_{ij}}{P_{ij}}-1\right|\le\varepsilon_q
+                  \quad(g\ge q).
+\end{equation}
+When $B=P$, the exact bound $\varepsilon_q=0$ is available for $q\ge1$.
+For rational normalized matrices and a rational Perron frame, all
+minorization identities and the choice of $q$ in \eqref{eq:k0} can be
+checked with exact rational arithmetic. General inputs require certified
+Perron data; a floating eigensolver is not such a certificate.
+
+\begin{corollary}[Quantitative convergence]\label{cor:quant-rate}
+For each fixed positive pair and fixed $m$,
+\[
+ k\log(\rho_{m,k}/\lambda)=\log M_m+O(\log k/k).
+\]
+\end{corollary}
+\begin{proof}
+Write $c_*=1/\pi_*$ and $b=-\log\theta>0$. Take
+$q=\max\{1,\lceil\log(c_*k)/b\rceil\}$, so
+$\varepsilon_q\le1/k$ and $q=O(\log k)$.
+For all sufficiently large $k$, both $k\ge m(q+1)$ and $k\ge2mq$ hold.
+Equation~\eqref{eq:simple-error} with fixed $\overline H$ gives the result.
+The constants depend on the fixed matrices and $m$.
+\end{proof}
+We do not claim that the logarithmic factor or these constants are optimal.
+
+\subsection{Rational stability tests}
+
+Put $A=A_m(q)$, $U=AR^{m-1}$ and $L=k-mq$. Exponentiating the finite-window
+bounds gives
+\[
+ \rho_{m,k}^{kL}\le\lambda^{kL}U^k(1+\varepsilon)^{mL},\qquad
+ \rho_{m,k}^{k}\ge\lambda^k\max\{1,(1-\varepsilon)A\}.
+\]
+Thus a first right-hand side below $1$ certifies exponential stability;
+a second right-hand side at least $1$ excludes it. For rational data these
+comparisons are exact integer-power calculations. Otherwise the result
+may be inconclusive. These tests do not claim that the period-$k$ witness
+is optimal or that the certified window is minimal.
 
 \section{Gap structure and its limitations}
 
@@ -403,6 +549,81 @@ Thus eight is the first stable window among $k\ge4$. The maximizing
 period is $k-1$. When $e_2>1$, the two budgets have different finite-$k$
 rates despite identical first-order coefficients.
 
+\section{Formal statement and verification scope}\label{sec:formal}
+
+The accompanying Lean 4.32.2 development builds on the pinned mathlib
+library \cite{mathlib2020}. The declaration
+\texttt{MissedUpdates.Matrices.rare\_miss\_cluster\_law}
+takes strictly positive real matrices on a nonempty finite index type,
+constructs their normalized Perron data, and proves the displayed limit
+for every fixed natural miss budget. The paper restricts to $m\ge1$;
+the formal statement additionally covers $m=0$. Definitions also allow
+small $k$, which does not change the eventual $k$-limit.
+
+\begin{table}[tb]
+\centering\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.22\linewidth}
+ >{\raggedright\arraybackslash}p{.31\linewidth}
+ >{\raggedright\arraybackslash}p{.37\linewidth}@{}}
+Mathematical object & Lean source modules & Semantic point checked\\\hline
+Window rule & \texttt{Protocol.lean} & Every starting slot of the infinite sequence; false means a miss\\
+Chronological product & \texttt{Words.lean}, \texttt{Decode.lean} & Earliest action on the right; actual prefix recovered from canonical misses\\
+Cluster budget & \texttt{Clusters.lean}, \texttt{Assembly.lean} & Derived lengths, separation and per-bin miss totals; no supplied growth bound\\
+Perron normalization & \texttt{PerronConvergence.lean}, \texttt{PerronRadius.lean} & Data and convergence from positivity; full complex spectrum\\
+Norm-growth rate & \texttt{NormGrowth.lean}, \texttt{Normalization.lean} & Literal supremum/limsup of norm roots, proved equivalent to gain growth\\
+Coefficient & \texttt{GapSuprema.lean} & Genuine integer gaps and exact equality to $\max(1,S_1,\ldots,S_m)$\\
+Finite cutoff & \texttt{Cutoff.lean} & Explicit finite domain, attained maximum and witness length\\
+Quantitative bounds & \texttt{Quantitative.lean}, \texttt{QuantitativeError.lean} & Both finite-window inequalities and the all-later-windows accuracy implication\\
+\end{tabular}
+\caption{Definition-to-proof map. Module names locate the code; full declaration
+names and types appear in the audit artifacts.}\label{tab:formal}
+\end{table}
+
+The formal norm is the elementwise maximum norm. Its two-sided comparison
+with the Perron gain is proved with constants independent of the word.
+The ordinary spectral radius is defined using the complex spectrum of the
+complexified real matrix; its equality to the positive normalizing eigenvalue
+is proved before converting it to a real number. Nonempty/bounded supremum
+sets and the necessary limsup boundedness are established explicitly.
+Gap order is reversed between chronological words and left-to-right factors,
+and the formal product identity accounts for this reversal.
+
+The combinatorial proof uses the sufficient occupied-bin count
+$\lfloor N/(k-mq)\rfloor+1$ in place of the ceiling used above. The extra
+constant vanishes at the long-product rate. For the upper limit, the formal
+argument fixes a tail tolerance, lets $k$ grow, and then shrinks the tolerance.
+The lower argument uses the period $k+a$ construction above. These are
+proof choices, not additional hypotheses on the model.
+
+Perron eigenvector existence and finite-chain Dobrushin convergence are
+imported from the pinned HNBM source \cite{hnbm}, not claimed as new results.
+The copied PF/MCMC files credit Matteo Cipollina in their headers; all
+20 files remain byte-identical to the recorded upstream commit, with their
+original notices retained. This project supplies the normalization bridge,
+canonical word/matrix assembly, rate comparison and limit proof.
+
+The quantitative structure \texttt{RelativeTail} requires both inequalities
+in \eqref{eq:two-tail} for every later power, together with
+$0\le\varepsilon<1$. It does not assume the desired growth conclusion.
+Theorem~\ref{thm:finite}, the cutoff comparison, \eqref{eq:error}, and an
+all-later-windows accuracy implication from the scalar conditions of
+\eqref{eq:k0} are kernel-checked. The automatic minorization construction
+\eqref{eq:explicit-tail} and Corollary~\ref{cor:quant-rate} are given here
+with classical proofs but are not separately Lean-formalized. The exact
+rational tool validates its input frame, minorization identities and
+finite search; it must not be described as a verified floating-point
+front end for arbitrary matrices.
+
+At this revision, the audit checks 201 exported theorem declarations using
+Lean trust level zero. Their dependency closures use only
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}, with
+no custom mathematical axioms or proof placeholders. A separate consumer
+checks the exported theorem. Invalid controls test the protocol, scalar
+gain, limit coefficient, positivity assumption and quantitative window
+condition. These checks support the artifact; a human semantic review of
+the correspondence in Table~\ref{tab:formal} remains a separate pending gate.
+
 \section{Verification and publication status}\label{sec:status}
 
 The accompanying standard-library Python checker uses exact rational
@@ -415,17 +636,16 @@ Theorem~\ref{thm:main}. The all-parameter argument is the classical
 proof above. The checker is fixture-specific, not a general validator
 for arbitrary matrix inputs.
 
-The main cluster law is also proved in the accompanying Lean 4.32.2 project.
-Its audit checks 175 exported declarations at trust level zero, using only
-the standard logical axioms \texttt{propext}, \texttt{Classical.choice},
-and \texttt{Quot.sound}. It includes Perron convergence from positivity,
-the canonical matrix bound, both limiting inequalities, and the norm-rate
-and gap-supremum identifications. The additional propositions are not all
-formalized. The manuscript and proof development used AI assistance;
-kernel checking does not establish publication priority or replace human
-specialist review. Authorship and affiliations require an explicit decision
-before circulation.
-A fresh-context reader review of this manuscript remains pending.
+The formal verification scope is specified in Section~\ref{sec:formal}.
+The quantitative tool additionally checks exact rational tail identities,
+attained finite-cutoff values, conservative stability classifications and
+accuracy certificates. These are not tests of previously unknown matrix
+trajectories in place of proof.
+
+The manuscript, code and proof scripts used AI assistance. Kernel checking
+does not establish novelty or replace author accountability. Authorship,
+affiliations, a fresh reader assessment and human specialist review remain
+unresolved. No reviewer has been appointed and no manuscript has been sent.
 
 A targeted prior-art audit found no direct match in the inspected
 theorem statements, but this is not evidence sufficient to establish
@@ -434,9 +654,15 @@ Zhao's 2019 work on constrained ergodic optimization for asymptotically
 additive potentials, Hertneck--Linsenmayer--Allgower's 2021 weakly-hard
 control paper, and the Gurvits--Samorodnitsky 2005 original attributed
 in the revision appendix of \cite{ahmadi2012}. No result is attributed
-directly to an unread text. The external review packet retains these
-access gaps and the precise comparisons with inspected sources.
+directly to an unread text. The exact 2019 Kozyakin--Kuznetsov--Chebotarev survey has now been read at
+its relevant statements and is cited directly. The earlier preprints
+\cite{zhao2014,hertneck2020} were inspected separately, without identifying
+them with unread journal versions. The review materials retain the remaining
+access gaps and distinguish proposed reviewers from received assessments.
 
+\begingroup
+\raggedright
 \bibliographystyle{plain}
 \bibliography{references}
+\endgroup
 \end{document}

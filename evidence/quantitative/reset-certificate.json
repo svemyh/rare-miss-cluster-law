@@ -1,0 +1,50 @@
+{
+  "accuracy_certificate": {
+    "Hbar": "5349/5000",
+    "all_windows_at_least": 129,
+    "claim": "abs(k*log(rho/lambda)-log(M_m)) <= delta for every integer k >= threshold",
+    "cutoff": 1,
+    "delta": "1/10",
+    "epsilon": "0"
+  },
+  "arithmetic": "exact rational",
+  "budget": 3,
+  "classification": "certified_stable",
+  "coefficient_upper": "10349/5000",
+  "cutoff": 1,
+  "cutoff_maximum": "10349/5000",
+  "dimension": 2,
+  "epsilon": "0",
+  "finite_candidates": 8,
+  "gap_ratio": "1",
+  "implementation_sha256": "07fa1f0ec4656b9737f3341b1af6b857c5cf489867df066a08eb31d39dfaa6fe",
+  "input_sha256": "6c321a4c3ea7a6a308194d520884447f36c475a107bd9405b74e4152e6ee5828",
+  "instability_test": {
+    "comparison_to_one": -1,
+    "denominator_bits": 46,
+    "numerator_bits": 46
+  },
+  "normalized_kth_power_lower": "10349/5000",
+  "proof_boundary": "Generic cutoff, finite-window and all-later-window accuracy implications are Lean-checked; the automatic minorization-tail construction remains classically justified rather than separately Lean-formalized",
+  "schema": "rare-miss-quantitative-v1",
+  "scope": "Rational normalized positive matrices with an exactly verified Perron frame; not arbitrary floating or feedback inputs",
+  "stability_test": {
+    "comparison_to_one": -1,
+    "denominator_bits": 356,
+    "numerator_bits": 356
+  },
+  "tail": {
+    "alpha": "1",
+    "kind": "exact_reset",
+    "pi_min": "1/100",
+    "theta": "0"
+  },
+  "window": 10,
+  "witness": {
+    "gaps_matrix_order": [
+      0
+    ],
+    "length": 2,
+    "misses": 2
+  }
+}

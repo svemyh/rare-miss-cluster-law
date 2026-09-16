@@ -1,6 +1,6 @@
 # Independent review brief
 
-Document: Rare-miss growth under sliding-window constraints.
+Document: Rare-miss growth: a finite-cluster law and certified bounds.
 Status: internal working draft; priority provisional; author metadata unset.
 This brief is a document, not an email or a sent request. No reviewer has been contacted.
 
@@ -19,7 +19,7 @@ The manuscript is intended to be self-contained. Read it without relying on the 
 5. Does the joining lemma bound products of cluster gains even when some gains are below one or their suprema are unattained?
 6. Is the matrix-to-scalar replacement uniform over all admissible words and arbitrary internal gaps, and does the resulting error vanish at the required k-scaled order?
 7. Does the lower argument avoid an unjustified exchange of supremum and limit?
-8. Does the finite-search enclosure distinguish a limiting Perron factor from a finite realizable success run?
+8. Does the new finite-gap clamp give the stated two-sided error, an attained realizable witness, and the required k>=m(q+1) threshold?
 9. Is the prescribed-gap construction correct for every t, without implying a fixed-dimension or finite-k conclusion it does not prove?
 10. Is the reset proposition valid with weak moment inequalities and at every k>=4, including boundary runs?
 
@@ -41,6 +41,8 @@ The earlier audit also records the Kozyakin 2019 constructive survey and Vrabel 
 
 ## Evidence and review boundary
 
-The accompanying exact-arithmetic checker supports finite examples and protocol bounds. Its output is not a formal verification of the theorem. Existing internal mathematical reviews concern the development proof; they are not external specialist approval and are not a fresh-reader review of this manuscript.
+The core law and quantitative implications under relative-tail data have a 201-declaration Lean audit. The automatic minorization-tail construction and big-O consequence retain classical rather than separate Lean proofs. The exact rational tool checks certificate inputs and computations; it is not an extracted Lean program. Existing internal mathematical reviews are not external specialist approval or a fresh-reader assessment of this revision.
+
+The complete repository includes separate mathematical and formalization briefs in review/, along with a coordinator semantic self-audit. Neither requested human review has been received. A manuscript-only ZIP does not include the complete Lean project; formalization review requires separately approved access to the proof files.
 
 Useful review output should distinguish a concrete gap, a missing assumption, a clarity problem, an equivalent prior theorem, and an optional improvement. A no-gap reading is not itself proof of novelty.

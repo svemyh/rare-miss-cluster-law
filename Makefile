@@ -1,6 +1,6 @@
-.PHONY: check check-exact check-lean check-package paper citations
+.PHONY: check check-exact check-lean check-quantitative check-package paper citations
 
-check: check-exact check-lean check-package
+check: check-exact check-lean check-quantitative check-package
 
 check-exact:
 	mkdir -p build
@@ -11,6 +11,14 @@ check-exact:
 
 check-lean:
 	cd lean && python3 check.py
+
+check-quantitative:
+	mkdir -p build
+	python3 -m unittest discover -s tests -v
+	python3 quantitative.py certify fixtures/quantitative-reset.json --output build/quantitative-reset.json
+	python3 -I -O quantitative.py certify fixtures/quantitative-reset.json --output build/quantitative-reset-optimized.json
+	cmp build/quantitative-reset.json build/quantitative-reset-optimized.json
+	python3 quantitative.py verify fixtures/quantitative-reset.json build/quantitative-reset.json
 
 check-package:
 	python3 scripts/check_package.py

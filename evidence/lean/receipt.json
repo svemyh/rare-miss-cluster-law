@@ -25,6 +25,11 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.all_later_windows_accuracy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.all_success_admissible": [
       "Classical.choice",
       "Quot.sound",
@@ -50,12 +55,27 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.clusterSup_le_cutoff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.clusterSup_succ": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "MissedUpdates.Matrices.clusterSup_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.coefficient_error_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cone_log_upper": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -71,6 +91,36 @@
       "propext"
     ],
     "MissedUpdates.Matrices.constrainedRate_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoffSup_attained": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoffSup_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoffWord_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoffWords_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoff_log_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.cutoff_period_witness": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -91,6 +141,21 @@
       "propext"
     ],
     "MissedUpdates.Matrices.exists_norm_gain_comparison": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.finite_window_logRate_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.finite_window_logRate_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.finite_window_rate_bounds": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -160,8 +225,22 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.gapMatrix_clamp_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapMatrix_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.gapWord_count": [
       "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapWord_length": [
       "Quot.sound",
       "propext"
     ],
@@ -221,6 +300,16 @@
       "propext"
     ],
     "MissedUpdates.Matrices.matrix_mul_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mem_boundedGaps": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mem_cutoffWords": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -310,12 +399,22 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.one_le_cutoffSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.one_nonnegative": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
     "MissedUpdates.Matrices.original_cluster_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.original_finite_window_rate_bounds": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -394,6 +493,11 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.positive_relative_tail_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.positive_scaled_logRate_tendsto": [
       "Classical.choice",
       "Quot.sound",
@@ -405,6 +509,11 @@
       "propext"
     ],
     "MissedUpdates.Matrices.pow_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.power_clamp_le": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -544,6 +653,16 @@
       "Quot.sound",
       "propext"
     ],
+    "MissedUpdates.Matrices.simplified_error_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.small_relative_log_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
     "MissedUpdates.Matrices.stochasticConjugate_mul": [
       "Classical.choice",
       "Quot.sound",
@@ -561,6 +680,10 @@
     ],
     "MissedUpdates.Matrices.stochasticConjugate_recover": [
       "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.sum_gaps_le": [
       "Quot.sound",
       "propext"
     ],
@@ -610,6 +733,11 @@
       "propext"
     ],
     "MissedUpdates.Matrices.word_gain_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_gain_le_cutoffSup": [
       "Classical.choice",
       "Quot.sound",
       "propext"
@@ -850,7 +978,7 @@
       "propext"
     ]
   },
-  "checked_at_utc": "2026-09-16T02:22:23.606793+00:00",
+  "checked_at_utc": "2026-09-16T05:23:09.835335+00:00",
   "coefficient": "max(1,S_1,...,S_m), genuine finite integer-gap suprema",
   "custom_mathematical_axioms": [],
   "dependency_revisions": {
@@ -873,7 +1001,8 @@
     "RejectAllMisses",
     "RejectFalseGain",
     "RejectShiftedCoefficient",
-    "RejectMissingStrictPositivity"
+    "RejectMissingStrictPositivity",
+    "RejectShortQuantitativeWindow"
   ],
   "normalization": "ordinary complex spectral radius of the real success matrix",
   "not_claimed": [
@@ -887,18 +1016,27 @@
     "propext"
   ],
   "proof_escape_tokens": [],
+  "quantitative_certificate_assumptions": "Uniform two-sided entrywise relative tail, 0<=error<1, and explicit window/scalar conditions",
+  "quantitative_classical_boundary": "Automatic minorization-tail construction and O(log(k)/k) corollary are not separately Lean-formalized",
+  "quantitative_theorems": [
+    "MissedUpdates.Matrices.clusterSup_le_cutoff",
+    "MissedUpdates.Matrices.original_finite_window_rate_bounds",
+    "MissedUpdates.Matrices.coefficient_error_bounds",
+    "MissedUpdates.Matrices.all_later_windows_accuracy"
+  ],
   "rate_definition": "limsup_N sup over infinite admissible sequences of matrix norm^(1/N)",
   "remaining_formalization_obligations_for_main_theorem": [],
-  "scope": "Full fixed-budget cluster growth law for strictly positive finite matrices",
+  "scope": "Full fixed-budget cluster law and quantitative finite-window implications under certified relative-tail data",
   "source_sha256": {
-    "AxiomAudit.lean": "3af02d96ceeed6753ee18788cf73bc2fd61b2d1ab3dc147740d9a63cd9546b84",
+    "AxiomAudit.lean": "e04bcec23f241229063bfe0261177eb6df98bd421dca98bd14b55fad57b9242a",
     "MCMC/Convergence.lean": "dde897cce54db3e7db859dc57035fcaad44974fe899308048b160dd35843fcf5",
     "MCMC/Core.lean": "9a99038de3c95c1b74ecf38a2cb705e35c67f8335eb9ad1bd964e0fbf7c00132",
     "MCMC/TotalVariation.lean": "d8430fe15bfe77650485842f64075ee0b6c489cf6fd4a2f6412ac2047caefff9",
-    "MainAudit.lean": "07dc323fe9ed036320dfba3932420eb2d0f6fd2b8b5078fc059a2a47dd752353",
-    "MissedUpdates.lean": "1569f6616aa7ab76378e789a94d0b4727f3f9262585ba01c1b05fe7d470f4087",
+    "MainAudit.lean": "69615d0d1281abb680f446fe9339b37e1ed5ccb9e95e2154ab497f77c193269f",
+    "MissedUpdates.lean": "f09d13ff7749b3ee8b1c94820a09dff153eaa84df46ef8573161ff1f170cd0f8",
     "MissedUpdates/Assembly.lean": "0e214e14e821dbea6b4e4a206e1373e1e57a8b6e804cad6326eb88ef5b578f03",
     "MissedUpdates/Clusters.lean": "b22e3ffb9477a24f2e375b80db69f0b041b990b66f28066b0c1d2d49e24c64b0",
+    "MissedUpdates/Cutoff.lean": "72498234d57ad173927dbff8619541024143ead2db8b8fc45912f661efb59eb5",
     "MissedUpdates/Decode.lean": "265e2cf9769c4e1574ff15449361aecb60d6f20faef33832044a9ee89b3df89d",
     "MissedUpdates/Frame.lean": "76b2cf995362a15b3456addc39589d46e9d560ac757fccdf40e7f293aca5ccec",
     "MissedUpdates/GapSuprema.lean": "6e3d931f05c4f3f4bbe3a0f1c7669b0ad0da2f144df22546301f15a4f6d26967",
@@ -915,6 +1053,8 @@
     "MissedUpdates/PerronConvergence.lean": "9b3644ce4541ae32ac8fe4a15d5287b4a3c86ce8f0c1ec20c48df4da469c76f8",
     "MissedUpdates/PerronRadius.lean": "43583e3f144fa9033bc99b086079dbbe4cff2ad570355dce3d67100d1875a189",
     "MissedUpdates/Protocol.lean": "503dfdf983fa660dc14b681ba2f0532571b588cee6215114671d7e65b978f3c9",
+    "MissedUpdates/Quantitative.lean": "f60869d98b19984ce419fc5d203d8b6a7c3623958fbad5b38f60a727b1067666",
+    "MissedUpdates/QuantitativeError.lean": "f091fbfc70af9109847338113f6b3c3fdfdfde8d4c5425f914870e4f0dab3468",
     "MissedUpdates/Tail.lean": "4ddbd383ebbf0a75ee698bb6ab0b3cb5f611bbbc5e4e94df09af9ede2b7c6a8a",
     "MissedUpdates/Words.lean": "b116ad141d1a6483d251c71edc441edfe1524cf62554ddcc956f20aedc39ab51",
     "PF/Analysis/CstarAlgebra/Classes.lean": "de927146680ce684b98e65b62558fb6ab5dd64ffaf3fc69894f4403011705673",
@@ -934,20 +1074,22 @@
     "PF/PerronFrobenius/Stochastic.lean": "0e8525c895bea4336c10b0cb29a01751ed5137de1d394ea2dba57a7b522018a9",
     "PF/PerronFrobenius/Uniqueness.lean": "d83d902263c14f13de63f67ad5dafcca0f55a86baa0ca8b762039f7b8e3116f1",
     "PF/Topology/Compactness/ExtremeValueUSC.lean": "1b6726c55843f11cd11f0d763a5b5ea991af642e28fbc270f6d4729c1db60dae",
-    "check.py": "20c346700d02dc2993da26faa42e01baa020ed1339491b6c47200b14a23bb0dc",
+    "check.py": "82cceae405dd7d2cb2c8e98e794808dea5d89cfb48b128229f798446257533b7",
     "checks/MainConsumer.lean": "0b4d54cda2cee9b0b831297b47e30df8ddaca412246e21ed3f5ff8b8318e215e",
     "checks/PositiveControl.lean": "935c64e9b5d45823741f27514d28f7e945067382b2ab6cb526370db7558e2490",
+    "checks/QuantitativeConsumer.lean": "b6ef51c3bacbfed61c3f0e1827fd27779b5b2d02e16614ff030e2d4ff38e1519",
     "checks/RejectAllMisses.lean": "540041e00c0b5448f982e665b66cf95b938786b47225562cc09aafa5dbdfd161",
     "checks/RejectFalseGain.lean": "4b60e62f4877b46cda8177212d5acdcf80dc9c44bb8de00352a576542156048b",
     "checks/RejectMissingStrictPositivity.lean": "ae5dcef0536208169df38155698f661019f794a3acf5787b99a712cc2b8af7c9",
     "checks/RejectShiftedCoefficient.lean": "38ac9bbff551145c68968c87dd10c417ae621159554c70b3ede3c57f837c31e6",
+    "checks/RejectShortQuantitativeWindow.lean": "fa43c36fcc7ff1bf9906285c3012ce8f5756cd9557f73c630e8664a5e17bd6cb",
     "lake-manifest.json": "851a114c1cae868f18997cf1992f6f69015bdc3bd1afea1f123a3a31414b8819",
     "lakefile.toml": "605aee81fe1a3045c03251ebe357382ee1147f101a90c8d60fa6739e31d811f2",
     "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
     "licenses/UPSTREAM-HASHES.json": "3ba2dd4c28d3a012a740c020d8b3db9bad91e79cd4b97055cce060ca2450ae72"
   },
   "status": "PASS",
-  "theorems_checked": 175,
+  "theorems_checked": 201,
   "trust_level": 0,
   "upstream_proof_commit": "58b321e9c9b86448e4fdd897a428c8cef7297f5e",
   "upstream_proof_files_hash_verified": 20,

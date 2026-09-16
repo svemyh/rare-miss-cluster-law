@@ -1,13 +1,11 @@
-# Full theorem verified
+# Main and quantitative implications verified
 
-The complete main cluster law is implemented and audited. `python3 check.py` passed on September 16, 2026 UTC. The corresponding local date was September 15 in America/Los_Angeles; the receipt records the exact UTC timestamp.
+The current development checks 201 exported declarations at Lean trust level zero. The main theorem rare_miss_cluster_law is unchanged. The added Cutoff, Quantitative and QuantitativeError modules contain 26 declarations, including the genuine cutoff comparison, finite-window rate bounds, coefficient-error estimates and all_later_windows_accuracy.
 
-Main declaration: `MissedUpdates.Matrices.rare_miss_cluster_law` in `MissedUpdates/Main.lean`. Its assumptions are strict entrywise positivity of C and D on a nonempty finite index type. It constructs the normalized Perron frame, identifies the ordinary complex spectral radius, and proves the actual norm-root growth-rate limit for every fixed miss budget.
+The quantitative implications explicitly require RelativeTail, which asserts both entrywise inequalities for every power beyond q with error in [0,1), plus stated integer/scalar conditions. It does not contain the desired growth bound. Positivity also implies existence of such tails for any positive tolerance below one.
 
-All three requested obligations are complete. The canonical split is connected to the original word, the matrix bound and the genuine cluster suprema. Perron convergence follows from positivity. Both limiting inequalities and the equivalence between gain growth and the literal matrix-norm rate are proved. The auxiliary coefficient is proved equal to max(1,S_1,...,S_m).
+The automatic minorization-tail formula, integer-power certificate algebra and the O(log(k)/k) corollary are classically justified in QUANTITATIVE.md but not separately Lean-formalized. The rational Python front end is not an extracted Lean verifier. This boundary is stated in the manuscript.
 
-Verification: 175 exported theorem declarations checked with Lean trust level zero; only propext, Classical.choice and Quot.sound in their dependency closures; a separate symbolic consumer passed; four invalid controls were rejected. All 20 vendored proof sources match the pinned upstream checkout byte-for-byte. See `build/receipt.json` and the raw audit logs.
+The audit permits only propext, Classical.choice and Quot.sound. A separate symbolic main-theorem consumer passes, and five invalid controls are rejected. Pinned Lean 4.32.2, mathlib and all 20 vendored PF/MCMC source identities remain unchanged. Fresh audit output is in build/; committed evidence is in ../evidence/lean/.
 
-Environment: Lean 4.32.2, mathlib 905b95818eb32af7874a58b427f50c1711a5e96c, HNBM 58b321e9c9b86448e4fdd897a428c8cef7297f5e. The imported files are PF/ and MCMC/{Core,TotalVariation,Convergence}.lean. Their original notices and hashes are preserved. The official compiler archive SHA-256 was checked before extraction: ea99ead969901b9fe4c7e7bf350b812a0249e9a5cea20474a737c0cc64746bc0.
-
-No formalization obligation remains for the main theorem's stated scope. The exact norm is the elementwise maximum norm. This status does not extend to every separate manuscript application, publication novelty, or human specialist review. The old Lean 4.19 baseline and the frozen classical artifacts remain unchanged. No background worker or recurring task is active.
+The earlier 175-declaration package is preserved in Git history. The older 52-declaration Lean 4.19 proof is under ../history/lean-4.19/. Human semantic/novelty review is pending and no publication priority is claimed.

@@ -6,3 +6,4 @@ import MissedUpdates.Perron
 import MissedUpdates.Words
 import MissedUpdates.PerronConvergence
 import MissedUpdates.Main
+import MissedUpdates.QuantitativeError

@@ -1,23 +1,18 @@
 # Source-access and priority status
 
-September 15, 2026. The prior detailed audit remains the evidence base. No previously unavailable original was obtained during manuscript preparation.
+Updated September 16, 2026 UTC. The exact Kozyakin–Kuznetsov–Chebotarev 2019 Part III PDF was obtained from the author-linked public archive and its relevant block-frequency and spectral statements were read. It is now cited directly. The current detailed ledger is literature-audit/REMAINING-GAPS.md in the full repository.
 
-The intended narrow source-access follow-up did not complete and produced no substantive report. It must not be counted as another literature read or as closing any gap. The working paper therefore preserves provisional priority language and does not attribute technical results directly to unread originals.
+## Exact targets still unclosed
 
-## Unclosed full-text gaps
-
-| Source | Exact identifier | Last established access state |
+| Source | Identifier | Current boundary |
 |---|---|---|
-| Zhao 2019, constrained ergodic optimization for asymptotically additive potentials | 10.1016/j.jmaa.2019.01.065 | Metadata and publisher location known; no usable full text obtained |
-| Hertneck–Linsenmayer–Allgower 2021 | 10.1016/j.automatica.2021.109868 | Verified Gaukler successor; no primary full text obtained |
-| Gurvits–Samorodnitsky 2005 | 10.1109/CDC.2005.1582513 | Original inaccessible; later primary attribution identifies its rank-one result |
-| Kozyakin–Kuznetsov–Chebotarev 2019 Part III | 10.1134/S0005117919060018 | Abstract/reference metadata only |
-| Vrabel 2026, spectral interaction/block stabilization | 10.1093/imamci/dnag016 | Primary abstract read; publisher PDF inaccessible |
+| Zhao 2019 | 10.1016/j.jmaa.2019.01.065 | Publisher metadata obtained; FULL-view API required authentication and the browser reached a human-verification page. The 2014 preprint was read separately, not equated to this version. |
+| Hertneck–Linsenmayer–Allgower 2021 | 10.1016/j.automatica.2021.109868 | Metadata retrieved; the accepted 2020 IFAC precursor and its main proof were read, but the exact 2021 text remains unclosed. |
+| Gurvits–Samorodnitsky 2005 | 10.1109/CDC.2005.1582513 | No open original obtained; later primary attribution remains the evidence for its rank-one result. |
+| Vrabel 2026 | 10.1093/imamci/dnag016 | No full text obtained; metadata/abstract-level assessment only. |
 
-## Manuscript-safe position
+## Publication boundary
 
-The earlier audit found no direct duplicate or complete corollary derivation in inspected theorem statements. That is a bounded assessment, not a priority guarantee. The candidate contribution is the hard-window finite-cluster coefficient. Rank-one multiplication, cycle optimization, fixed-language periodic approximation and Perron-based limiting methods are established ingredients.
+The inspected statements did not yield a direct duplicate or complete corollary derivation of the fixed-budget growing-window coefficient. This is not proof of novelty. The quantitative bounds are new to this project, not certified first-in-literature results. The remaining exact sources and both human specialist reviews remain gates to an unqualified publication claim.
 
-The manuscript cites inspected sources for technical statements and treats the exact reset calculation as an application. The bibliography retains the exact inspected arXiv versions where relevant. Author names were checked against available primary title pages during preparation; the Rheinfels given name was corrected to Tim before the final build.
-
-No publisher restriction was bypassed, no paid access was purchased, no author was contacted and no submission was made. Direct inspection of missing originals and external specialist review remain publication gates.
+No author was contacted, private manuscript shared, paid access purchased, or submission made. The proposed mathematical and formalization reviewers are not appointed or endorsed.

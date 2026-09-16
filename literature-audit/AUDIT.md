@@ -2,6 +2,8 @@
 
 Audit cutoff: September 15, 2026. This is a literature implication assessment, not a proof of priority or an external peer review. The mathematical statement and checker were frozen throughout.
 
+Update, September 16, 2026 UTC: the exact Kozyakin–Kuznetsov–Chebotarev 2019 Part III text has now been obtained and compared. The current access ledger and separately inspected Zhao/Hertneck precursors are in [REMAINING-GAPS.md](REMAINING-GAPS.md). The original assessment below is preserved; its Kozyakin access gap is superseded by that follow-up.
+
 ## Bottom line
 
 **No direct duplicate or complete corollary derivation was found in the inspected results. The general theorem remains a plausible specialized contribution, with publication novelty provisional.**

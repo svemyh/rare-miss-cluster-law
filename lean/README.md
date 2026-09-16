@@ -36,7 +36,7 @@ python3 check.py
 
 The checker uses `.toolchain/bin` if present; otherwise put the pinned Lean toolchain on PATH or set `LEAN_BIN_DIR`. For a fresh checkout, obtain the versions in `lean-toolchain` and `lake-manifest.json`, then run `lake update` and `lake exe cache get`. Do not replace the pins with newer revisions.
 
-The checker rebuilds the library, checks dependency revisions and the hashes of all 20 vendored proof files, audits all 175 exported theorem declarations with `lean --trust=0`, checks a separate symbolic consumer, and requires four intentionally invalid controls to fail for their expected reasons.
+The checker rebuilds the library, checks dependency revisions and the hashes of all 20 vendored proof files, audits all 201 exported theorem declarations with `lean --trust=0`, checks a separate symbolic consumer, and requires five intentionally invalid controls to fail for their expected reasons.
 
 Replays write evidence to `build/receipt.json`, `build/axioms-trust-zero.txt`, and `build/main-trust-zero.txt`. Committed snapshots are in `../evidence/lean/`. The main proof's dependency closure uses only `propext`, `Classical.choice`, and `Quot.sound`. There are no `sorry`/`admit` placeholders, custom mathematical axioms, or native-decision shortcuts in the task-owned proof sources.
 
@@ -45,3 +45,9 @@ Replays write evidence to `build/receipt.json`, `build/axioms-trust-zero.txt`, a
 Lean 4.32.2; mathlib commit `905b95818eb32af7874a58b427f50c1711a5e96c`. The constructive Perron and finite-chain convergence proofs are imported from HNBM commit `58b321e9c9b86448e4fdd897a428c8cef7297f5e`. The copied files are byte-identical to that checkout. Original headers, notices, source hashes, and provenance are retained in `licenses/`. Upstream and some local lint warnings do not represent unfinished proofs.
 
 This establishes the main fixed-budget growth law. It does not establish publication novelty, supply human specialist review, or formalize every additional example and finite-search result in the manuscript. The classical theorem, numerical checker, manuscript, and old Lean baseline remain preserved. No submission, publication, paid worker, or spending-limit change was used for this continuation.
+
+## Quantitative extension
+
+The added Cutoff, Quantitative and QuantitativeError modules contain 26 declarations. They prove an attained maximum over genuine bounded-gap words, the clamping comparison, both finite-window norm-rate inequalities, coefficient-error estimates, and an accuracy implication for every later window. RelativeTail explicitly assumes a two-sided entrywise bound for every power beyond q; it contains no growth conclusion.
+
+The automatic minorization-tail formula and the O(log(k)/k) corollary in QUANTITATIVE.md have classical proofs, not separate Lean formalizations. The rational front end is not an extracted Lean program. Human semantic review remains pending; see the review materials at the repository root.

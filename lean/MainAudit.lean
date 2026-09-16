@@ -1,10 +1,17 @@
-import MissedUpdates.Main
+import MissedUpdates
 
 #print axioms MissedUpdates.Matrices.rare_miss_cluster_law
 #print axioms MissedUpdates.Matrices.rare_miss_cluster_law_for_frame
 #print axioms MissedUpdates.Matrices.clusterSup_eq_paperM
 #print axioms MissedUpdates.Matrices.positive_eigenvalue_spectralRadius
+#print axioms MissedUpdates.Matrices.clusterSup_le_cutoff
+#print axioms MissedUpdates.Matrices.original_finite_window_rate_bounds
+#print axioms MissedUpdates.Matrices.coefficient_error_bounds
+#print axioms MissedUpdates.Matrices.all_later_windows_accuracy
 #check MissedUpdates.Matrices.rare_miss_cluster_law
+#check MissedUpdates.Matrices.original_finite_window_rate_bounds
+#check MissedUpdates.Matrices.all_later_windows_accuracy
+#print MissedUpdates.Matrices.RelativeTail
 #print MissedUpdates.Matrices.constrainedRate
 #print MissedUpdates.Matrices.rootPrefixSup
 #print MissedUpdates.Matrices.paperM

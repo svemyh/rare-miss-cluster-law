@@ -1,11 +1,13 @@
 # Research status
 
-The main fixed-budget rare-miss cluster law is fully proved in Lean for arbitrary strictly positive finite real matrices. The formal definition includes the actual sliding-window language, norm-root growth, the complex spectral radius, and genuine finite integer-gap suprema. The implementation and its separate consumer use no custom mathematical axioms.
+The main fixed-budget cluster law remains fully proved in Lean. The publication revision adds 26 checked declarations for a genuine finite-gap cutoff, two-sided finite-window norm-rate bounds, coefficient-error estimates and an accuracy implication for every later window. The current audit covers 201 declarations with only the three standard logical axioms and five invalid controls rejected.
 
-The exact checker covers 408 admissible-word matrix/packing cases and 7,767 reset run-replacement cases. These support the examples; they do not replace the general proof. The readable classical argument, internal review and current manuscript are included.
+The quantitative implications have explicit uniform relative-tail and scalar preconditions. An exact rational tool validates normalized positive data, constructs a minorization tail, enumerates cutoff words and checks stability and accuracy certificates. Nine tests pass, including conservative/inconclusive behavior and corrupted inputs. The automatic tail construction and O(log(k)/k) corollary have classical proofs, not separate Lean formalizations.
 
-Publication novelty is provisional. The literature assessment contains 24 substantive primary-work comparisons and a separate anchor spot-check, with explicit access and coverage gaps. Human specialist review, a fresh independent review of the typeset manuscript, authorship, affiliations and a venue remain unresolved. The additional finite-search and example propositions have not all been formalized.
+The revised paper centers the combinatorial packing argument, retains the prescribed-gap and reset examples, and explains the formal correspondence and imported PF/MCMC work. The frozen original theorem and numerical checker are unchanged.
 
-The project progressed from a classical proof and exact examples, through 52 supporting Lean 4.19 declarations, to the complete 175-declaration Lean 4.32.2 proof. The historical proof is in `history/lean-4.19/`. The frozen theorem and numerical checker remain byte-identical to their original verified inputs. The packaged manuscript updates only its proof-status disclosures.
+One exact primary-text gap, Kozyakin–Kuznetsov–Chebotarev 2019 Part III, has been closed at relevant theorem-section depth. Four exact targets remain unclosed. Two earlier preprints were inspected without silently identifying them with later journal versions. See literature-audit/REMAINING-GAPS.md.
 
-Private hosting under `svemyh` was requested by the owner. It is not public publication or submission. No author contact, reviewer invitation, paid model run or automatic cloud job is part of this package.
+Human mathematical and formalization reviews have not been received. Candidate reviewers and separate briefs are prepared in review/. The owner must select reviewers and authorize the sharing scope; no one has been contacted. Authorship, affiliations, venue, public artifact licensing and submission remain undecided. Novelty remains provisional.
+
+The repository stays private. The current publication-revision branch does not imply a public release, accepted paper, paid worker restart or reviewer endorsement.

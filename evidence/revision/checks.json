@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "Local manuscript, formal implications and rational certificate implementation",
+  "publication_ready": false,
+  "manuscript": {
+    "pages": 11,
+    "pdf_sha256": "767d0710b801ca10452cb2bff2b635a592c7f4613585e4bb00572184be1cf339",
+    "visual_review": "all final page content inspected; unchanged rendered-page hashes reused",
+    "unresolved_references_or_overfull_boxes": []
+  },
+  "lean": {
+    "theorems_checked": 201,
+    "trust_level": 0,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "custom_mathematical_axioms": [],
+    "separate_consumers": 2,
+    "invalid_controls_rejected": 5
+  },
+  "quantitative": {
+    "tests_passed": 9,
+    "normal_optimized_certificates_equal": true,
+    "certificate_replay": "PASS",
+    "fixture_accuracy": "1/10",
+    "fixture_all_windows_at_least": 129,
+    "fixture_sufficient_stability_window": 10,
+    "thresholds_claimed_optimal": false
+  },
+  "literature": {
+    "exact_source_gaps_closed": 1,
+    "earlier_preprints_read_separately": 2,
+    "exact_targets_remaining": [
+      "10.1016/j.jmaa.2019.01.065",
+      "10.1016/j.automatica.2021.109868",
+      "10.1109/CDC.2005.1582513",
+      "10.1093/imamci/dnag016"
+    ]
+  },
+  "human_reviews": {
+    "received": 0,
+    "contact_made": false,
+    "owner_selection_pending": true,
+    "notification_issue": "rare-miss-specialist-review",
+    "notification_streak": 1,
+    "notification_priority": "normal",
+    "ntfy": "delivered",
+    "incident_escalation": false
+  },
+  "classical_not_separately_lean_formalized": [
+    "Automatic minorization-tail construction",
+    "Integer-power certificate algebra",
+    "O(log(k)/k) corollary"
+  ],
+  "date_utc": "2026-09-16"
+}

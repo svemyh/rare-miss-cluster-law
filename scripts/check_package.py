@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,7 +40,9 @@ def main():
     names = [name for name in names if name]
     required = {'README.md', 'Makefile', 'THEOREM.md', 'verify.py', 'lean/MissedUpdates/Main.lean',
                 'lean/AxiomAudit.lean', 'lean/licenses/UPSTREAM-HASHES.json', 'paper/rare_misses.pdf',
-                'evidence/lean/receipt.json', 'evidence/manuscript/qa-review.json'}
+                'evidence/lean/receipt.json', 'evidence/manuscript/qa-review.json',
+                'QUANTITATIVE.md', 'quantitative.py', 'fixtures/quantitative-reset.json',
+                'tests/test_quantitative.py', 'evidence/quantitative/reset-certificate.json'}
     require(required <= set(names), 'Missing package files: '+str(sorted(required-set(names))))
     total = links = 0
     for name in names:
@@ -69,9 +72,12 @@ def main():
     require(links >= 20, 'Unexpectedly few local links were checked')
     proof = read_json('evidence/lean/receipt.json')
     require(proof['status'] == 'PASS' and proof['full_growth_rate_theorem_formalized'], 'Full proof pass missing')
-    require(proof['trust_level'] == 0 and proof['theorems_checked'] == 175, 'Proof audit scope changed')
+    require(proof['trust_level'] == 0 and proof['theorems_checked'] == 201, 'Proof audit scope changed')
+    require('MissedUpdates.Matrices.all_later_windows_accuracy' in proof['quantitative_theorems'],
+            'Quantitative accuracy implication missing from the proof receipt')
     require(proof['custom_mathematical_axioms'] == [], 'Unexpected mathematical axioms')
     for name, expected in proof['source_sha256'].items():
+        require('lean/'+name in names, 'Proof receipt names an untracked input: '+name)
         require(digest(ROOT/'lean'/name) == expected, 'Proof receipt mismatch: '+name)
     exact = read_json('evidence/exact/check-results.json')
     require(exact['status'] == 'PASS', 'Exact verification failed')
@@ -88,9 +94,13 @@ def main():
     qa = read_json('evidence/manuscript/qa-review.json')
     require(qa['status'] == 'PASS' and qa['pdf_sha256'] == pdf_hash, 'PDF visual review is stale')
     require(qa['pages_reviewed'] == list(range(1, manuscript['pages']+1)), 'Incomplete PDF visual review')
+    subprocess.run([sys.executable, str(ROOT/'quantitative.py'), 'verify',
+                    str(ROOT/'fixtures/quantitative-reset.json'),
+                    str(ROOT/'evidence/quantitative/reset-certificate.json')],
+                   check=True, capture_output=True, text=True)
     print(json.dumps({'status': 'PASS', 'tracked_files': len(names), 'tracked_bytes': total,
                       'local_links_checked': links, 'proof_declarations': proof['theorems_checked'],
-                      'pdf_pages': manuscript['pages']}, indent=2))
+                      'pdf_pages': manuscript['pages'], 'quantitative_certificate': 'PASS'}, indent=2))
 
 
 if __name__ == '__main__':
