@@ -1,0 +1,6 @@
+checks/RejectShiftedCoefficient.lean:13:2: error: Type mismatch
+  (rare_miss_cluster_law_for_frame C D hC hD hlam F m).right
+has type
+  Tendsto (fun k => ↑k * Real.log (constrainedRate C D m k / lam)) atTop (𝓝 (Real.log (paperM F (lam⁻¹ • D) m)))
+but is expected to have type
+  Tendsto (fun k => ↑k * Real.log (constrainedRate C D m k / lam)) atTop (𝓝 (Real.log (paperM F (lam⁻¹ • D) m) + 1))

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "80c1e1ce244e2741c4506ad9ef7ac88a03a7615958f9bb11f9bc3fe8de5d1700",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "review": "Coordinator visual inspection of all rendered pages in the packaged build; not independent specialist review.",
+  "checks": [
+    "No clipped or overlapping text/formulas",
+    "Updated Lean proof disclosures legible on pages 1 and 7",
+    "References and page numbering legible"
+  ],
+  "date_utc": "2026-09-16"
+}

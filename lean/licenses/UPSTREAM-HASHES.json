@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/mkaxiomatic-ai/HNBM",
+  "commit": "58b321e9c9b86448e4fdd897a428c8cef7297f5e",
+  "copy_verification": "All 20 files are byte-identical to the pinned clean source checkout.",
+  "sha256": {
+    "MCMC/Convergence.lean": "dde897cce54db3e7db859dc57035fcaad44974fe899308048b160dd35843fcf5",
+    "MCMC/Core.lean": "9a99038de3c95c1b74ecf38a2cb705e35c67f8335eb9ad1bd964e0fbf7c00132",
+    "MCMC/TotalVariation.lean": "d8430fe15bfe77650485842f64075ee0b6c489cf6fd4a2f6412ac2047caefff9",
+    "PF/Analysis/CstarAlgebra/Classes.lean": "de927146680ce684b98e65b62558fb6ab5dd64ffaf3fc69894f4403011705673",
+    "PF/Auxiliary.lean": "9394455aa66be51ae23ea43354cca9893432d942e096b67152fd8142e1157472",
+    "PF/Combinatorics/Quiver/Cyclic.lean": "f73c46d01d4dbc10d6e3970fb1ad92da8e6ebee4dfa7e08faa12769283ee04b3",
+    "PF/Combinatorics/Quiver/Path.lean": "f507e9895ec792c22bb0e423a0b6d5639660f18947105e6f73f1c32455c7a670",
+    "PF/Data/List.lean": "0d976b533bbaf735d316bee0fc02a88bfc25d501e700284c06fda6f650e68a29",
+    "PF/LinearAlgebra/Matrix/Spectrum.lean": "9d68f6025b4270cca0c8c8b450694a02a964ff8942a48b9e3d99b03e3ff31653",
+    "PF/PerronFrobenius/Aperiodic.lean": "b0d0560a732fde8f3ac42f7ed47a7125e0eb7246340d35277d13c0656ed94819",
+    "PF/PerronFrobenius/CollatzWielandt.lean": "7accc5aaec8018e7e34b7b0d721ed542b444c2dd0edb7407863c99d7cbb942f0",
+    "PF/PerronFrobenius/Dominance.lean": "d6b54519c11cb374b5bcf3cf53403417e9eda6da82308984bc6a4f728d81b23b",
+    "PF/PerronFrobenius/DominancePart2.lean": "9a2743b61a2435e44fd0ad86bfc765984a60ea011c7bfb4d4c0a5146ba8190f1",
+    "PF/PerronFrobenius/Irreducible.lean": "ba9320c28780becbdc77d5ca1364419b95dfb63954ff9bd35e741a7042d6ca79",
+    "PF/PerronFrobenius/Lemmas.lean": "9d672637f16727769e8b01a495aaae4e2d1cb4c3366ce671d17bf762b7ad174c",
+    "PF/PerronFrobenius/Multiplicity.lean": "13fb15d70f4440c69b7a0567d77ca8c9da4c484a4b97a280e1dfc9bdd1cda5d8",
+    "PF/PerronFrobenius/Primitive.lean": "0ddbe8a01f09fab3f0ebbfba78917217f6ece2fc5943a82483d7170f8cf59208",
+    "PF/PerronFrobenius/Stochastic.lean": "0e8525c895bea4336c10b0cb29a01751ed5137de1d394ea2dba57a7b522018a9",
+    "PF/PerronFrobenius/Uniqueness.lean": "d83d902263c14f13de63f67ad5dafcca0f55a86baa0ca8b762039f7b8e3116f1",
+    "PF/Topology/Compactness/ExtremeValueUSC.lean": "1b6726c55843f11cd11f0d763a5b5ea991af642e28fbc270f6d4729c1db60dae"
+  }
+}

@@ -1,0 +1,9 @@
+import MissedUpdates.Perron
+import MissedUpdates.PerronConvergence
+
+#print axioms MissedUpdates.Matrices.positive_perron_convergence
+#print axioms MissedUpdates.Matrices.Frame.power_converges
+
+#print axioms MissedUpdates.Matrices.positive_eigenvector_exists
+#print axioms MissedUpdates.Matrices.positive_left_right_eigenvectors
+#check MissedUpdates.Matrices.positive_left_right_eigenvectors

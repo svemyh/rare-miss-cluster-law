@@ -1,0 +1,8 @@
+checks/RejectMissingStrictPositivity.lean:10:35: error: Application type mismatch: The argument
+  hC
+has type
+  Nonnegative C
+but is expected to have type
+  ∀ (i j : n), 0 < C i j
+in the application
+  rare_miss_cluster_law C D hC

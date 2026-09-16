@@ -1,0 +1,36 @@
+'MissedUpdates.Matrices.rare_miss_cluster_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.rare_miss_cluster_law_for_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.clusterSup_eq_paperM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MissedUpdates.Matrices.positive_eigenvalue_spectralRadius' depends on axioms: [propext, Classical.choice, Quot.sound]
+MissedUpdates.Matrices.rare_miss_cluster_law.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n] [Nonempty n]
+  (C D : Matrix n n ℝ) (hC : ∀ (i j : n), 0 < C i j) (hD : ∀ (i j : n), 0 < D i j) :
+  0 < MissedUpdates.Matrices.ordinarySpectralRadius C ∧
+    ∃ F,
+      ∀ (m : ℕ),
+        Filter.Tendsto
+          (fun k =>
+            ↑k *
+              Real.log
+                (MissedUpdates.Matrices.constrainedRate C D m k / MissedUpdates.Matrices.ordinarySpectralRadius C))
+          Filter.atTop
+          (nhds
+            (Real.log (MissedUpdates.Matrices.paperM F ((MissedUpdates.Matrices.ordinarySpectralRadius C)⁻¹ • D) m)))
+def MissedUpdates.Matrices.constrainedRate.{u_1} : {n : Type u_1} →
+  [Fintype n] → [DecidableEq n] → Matrix n n ℝ → Matrix n n ℝ → ℕ → ℕ → ℝ :=
+fun {n} [Fintype n] [DecidableEq n] B E m k => Filter.limsup (MissedUpdates.Matrices.rootPrefixSup B E m k) Filter.atTop
+def MissedUpdates.Matrices.rootPrefixSup.{u_1} : {n : Type u_1} →
+  [Fintype n] → [DecidableEq n] → Matrix n n ℝ → Matrix n n ℝ → ℕ → ℕ → ℕ → ℝ :=
+fun {n} [Fintype n] [DecidableEq n] B E m k N =>
+  sSup
+    {x |
+      ∃ σ,
+        MissedUpdates.Admissible σ m k ∧
+          ‖MissedUpdates.Matrices.wordProduct B E (MissedUpdates.prefixWord σ N)‖ ^ (1 / ↑N) = x}
+def MissedUpdates.Matrices.paperM.{u_1} : {n : Type u_1} →
+  [inst : Fintype n] → [DecidableEq n] → {B : Matrix n n ℝ} → MissedUpdates.Matrices.Frame B → Matrix n n ℝ → ℕ → ℝ :=
+fun {n} [Fintype n] [DecidableEq n] {B} F E x => Nat.brecOn x (MissedUpdates.Matrices.paperM._f F E)
+def MissedUpdates.Matrices.gapMatrix.{u_1} : {n : Type u_1} →
+  [Fintype n] → [DecidableEq n] → Matrix n n ℝ → Matrix n n ℝ → List ℕ → Matrix n n ℝ :=
+fun {n} [Fintype n] [DecidableEq n] B E x => List.brecOn x (MissedUpdates.Matrices.gapMatrix._f B E)
+def MissedUpdates.Admissible : (ℕ → Bool) → ℕ → ℕ → Prop :=
+fun σ m k => ∀ (s : ℕ), {i ∈ Finset.Ico s (s + k) | σ i = false}.card ≤ m

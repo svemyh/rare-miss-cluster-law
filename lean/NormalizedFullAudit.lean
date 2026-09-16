@@ -1,0 +1,9 @@
+import MissedUpdates.NormGrowth
+
+#print axioms MissedUpdates.Matrices.canonical_prefix_norm_bound
+#print axioms MissedUpdates.Matrices.positive_perron_convergence
+#print axioms MissedUpdates.Matrices.scaled_logRate_eventually_lower
+#print axioms MissedUpdates.Matrices.scaled_logRate_eventually_upper
+#print axioms MissedUpdates.Matrices.constrainedRate_eq_exp_logRate
+#print axioms MissedUpdates.Matrices.constrainedRate_cluster_limit
+#check MissedUpdates.Matrices.constrainedRate_cluster_limit

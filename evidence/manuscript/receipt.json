@@ -1,0 +1,29 @@
+{
+  "external_specialist_review": "Not performed",
+  "finite_word_cases": 408,
+  "fresh_context_reader_review": "Not performed in this stage",
+  "frozen_inputs_sha256": {
+    "THEOREM.md": "4acd0ef06ece65c0471d70b727b7dc152f73b469f7aedae5d79a4ca285a10e34",
+    "verify.py": "a27bd934b0546e89c8a660beec11f6a19fed10e86670d06689b89b4841c7332e"
+  },
+  "manual_visual_review": "Separate record required in VERIFICATION.md and build/qa-review.json",
+  "manuscript_sha256": {
+    "build.py": "6e849da4703f45d67a38d0b83dd9ead40e0837696bc23dc8afc04ebd6338527d",
+    "rare_misses.tex": "cfc1d8ea0e5f9c70d7dd33a3217d8e8ba2b59a0f9f3473e658f5e77de11bcfca",
+    "references.bib": "ad6c0c58b80903c74a1cb24109b94599e1ccc52812f356dbba63ae5800cd14cd"
+  },
+  "negative_controls_rejected": [
+    "corrupted_planar_coefficient",
+    "planar_formula_in_dimension_three",
+    "density_only_protocol"
+  ],
+  "normal_optimized_receipts_identical": true,
+  "overfull_or_unresolved_reference_messages": [],
+  "pages": 7,
+  "pdf_sha256": "80c1e1ce244e2741c4506ad9ef7ac88a03a7615958f9bb11f9bc3fe8de5d1700",
+  "publication_novelty": "Provisional",
+  "reset_cases": 7767,
+  "scope": "Build, text/reference checks, rendered-page presence and frozen finite arithmetic; not a formal proof",
+  "status": "PASS",
+  "tectonic": "Tectonic 0.17.0"
+}

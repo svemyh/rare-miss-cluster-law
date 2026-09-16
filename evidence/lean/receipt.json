@@ -1,0 +1,955 @@
+{
+  "axioms_by_theorem": {
+    "MissedUpdates.Matrices.Frame.conjugate_stationary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.Frame.conjugate_stochastic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.Frame.gain_mul_power": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.Frame.gain_power_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.Frame.power_converges": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.all_success_admissible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.canonical_prefix_gain_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.canonical_prefix_norm_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.canonical_product_gains_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.clusterSup_eq_paperM": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.clusterSup_succ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.clusterSup_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.constrainedRate_cluster_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.constrainedRate_eq_exp_logRate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.constrainedRate_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.decode_cons_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.decode_gain_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.exists_miss_cone_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.exists_norm_gain_comparison": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.finset_product_gains_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gainSet_bddAbove": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gainSet_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_eq_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_insert_reset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_outer_powers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gain_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapGainSet_bddAbove": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapGainSet_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapGainSet_subset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapWord_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gapWord_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.gap_gain_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.joinedMatrix_gain": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.joined_gain_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.limsup_le_of_tendsto_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.limsup_le_with_vanishing_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.list_prod_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.list_prod_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.logRate_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.logRate_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.long_gap_right_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.matrix_mul_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mulVec_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mulVec_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mul_mono_left": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mul_mono_right": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.mul_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.nat_ratio_add_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.nat_ratio_sub_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normLog_comparison": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normPrefixLog_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normPrefixSet_bddAbove": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normPrefixSet_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normPrefixSet_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normPrefixSup_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.norm_gain_sup_comparison": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.norm_logRate_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.normalized_frame_spectralRadius": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.one_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.one_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.original_cluster_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.original_rate_normalization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.outer_mulVec": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.paddedWords_count": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.paddedWords_matrix_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.padded_gain_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.periodic_logRate_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.periodic_prefixLog_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.periodic_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_dot_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_eigenvalue_spectralRadius": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_eigenvector_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_frame_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_isPrimitive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_left_right_eigenvectors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_perron_convergence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.positive_scaled_logRate_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.pow_mulVec_fixed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.pow_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.power_gain_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.power_right_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixGainSet_bddAbove": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixGainSet_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixGainSup_ge_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixGainSup_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixLog_bounded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixLog_isBounded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixLog_isCobounded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixLog_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefixLog_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefix_gain_le_sup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.prefix_norm_root_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.product_gains_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rare_miss_cluster_law": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rare_miss_cluster_law_for_frame": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.real_cast_div_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rootPrefixSet_bddAbove": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rootPrefixSup_isBounded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rootPrefixSup_isCobounded": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.rootPrefixSup_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.root_sup_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.row_ratio_le_gain": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.scaled_logRate_eventually_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.scaled_logRate_eventually_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.scaled_logRate_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.separated_gain_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.stochasticConjugate_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.stochasticConjugate_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.stochasticConjugate_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.stochasticConjugate_recover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.uniform_power_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.vecMul_pow_fixed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.witness_logRate_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.wordProduct_append": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.wordProduct_nonnegative": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.wordProduct_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.wordProduct_true": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_gain_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_gain_gap_decomposition": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_gain_le_clusterSup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_gap_decomposition": [
+      "propext"
+    ],
+    "MissedUpdates.Matrices.word_right_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.admissible_list_length": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.bin_contains_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.bin_sum_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.bin_union_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_bin_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_bin_count_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_bin_label_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_cluster_length_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_cluster_span": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_clusters_disjoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_total_misses": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.canonical_total_misses_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.card_le_of_in_window": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.chain_bin_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.chain_span": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.clusterWord_count": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_index_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_length_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_mem_span": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_miss": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_ne_nil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_separation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_sorted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_steps": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cluster_sublist": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cursor_append": [],
+    "MissedUpdates.cursor_eq_getLast": [
+      "propext"
+    ],
+    "MissedUpdates.cursor_le": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.cursor_nonempty": [
+      "propext"
+    ],
+    "MissedUpdates.flatten_clusters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.list_chain_span": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.mem_div_bin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.missList_cursor_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.missList_filter": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.missList_succ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.no_long_cluster": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.paper_bin_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.periodic_add_mul": [
+      "propext"
+    ],
+    "MissedUpdates.periodic_admissible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.positionsWord_append": [
+      "propext"
+    ],
+    "MissedUpdates.positionsWord_count": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.positionsWord_leading": [
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_canonical_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_count_misses": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_periodic": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_periodic_succ": [
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.prefixWord_succ": [
+      "propext"
+    ],
+    "MissedUpdates.prefix_count_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MissedUpdates.short_chain_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "checked_at_utc": "2026-09-16T02:22:23.606793+00:00",
+  "coefficient": "max(1,S_1,...,S_m), genuine finite integer-gap suprema",
+  "custom_mathematical_axioms": [],
+  "dependency_revisions": {
+    "Cli": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+    "LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "Qq": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+    "aesop": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+    "batteries": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+    "importGraph": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+    "mathlib": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "plausible": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+    "proofwidgets": "6e311e2a844da9b2cc3971187df2fe0066947b93"
+  },
+  "dependency_sources_clean": true,
+  "full_growth_rate_theorem_formalized": true,
+  "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+  "main_theorem": "MissedUpdates.Matrices.rare_miss_cluster_law",
+  "matrix_norm": "elementwise maximum norm",
+  "negative_controls_rejected": [
+    "RejectAllMisses",
+    "RejectFalseGain",
+    "RejectShiftedCoefficient",
+    "RejectMissingStrictPositivity"
+  ],
+  "normalization": "ordinary complex spectral radius of the real success matrix",
+  "not_claimed": [
+    "Publication novelty",
+    "Human specialist review",
+    "Formalization of every separate application in the manuscript"
+  ],
+  "permitted_foundational_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "proof_escape_tokens": [],
+  "rate_definition": "limsup_N sup over infinite admissible sequences of matrix norm^(1/N)",
+  "remaining_formalization_obligations_for_main_theorem": [],
+  "scope": "Full fixed-budget cluster growth law for strictly positive finite matrices",
+  "source_sha256": {
+    "AxiomAudit.lean": "3af02d96ceeed6753ee18788cf73bc2fd61b2d1ab3dc147740d9a63cd9546b84",
+    "MCMC/Convergence.lean": "dde897cce54db3e7db859dc57035fcaad44974fe899308048b160dd35843fcf5",
+    "MCMC/Core.lean": "9a99038de3c95c1b74ecf38a2cb705e35c67f8335eb9ad1bd964e0fbf7c00132",
+    "MCMC/TotalVariation.lean": "d8430fe15bfe77650485842f64075ee0b6c489cf6fd4a2f6412ac2047caefff9",
+    "MainAudit.lean": "07dc323fe9ed036320dfba3932420eb2d0f6fd2b8b5078fc059a2a47dd752353",
+    "MissedUpdates.lean": "1569f6616aa7ab76378e789a94d0b4727f3f9262585ba01c1b05fe7d470f4087",
+    "MissedUpdates/Assembly.lean": "0e214e14e821dbea6b4e4a206e1373e1e57a8b6e804cad6326eb88ef5b578f03",
+    "MissedUpdates/Clusters.lean": "b22e3ffb9477a24f2e375b80db69f0b041b990b66f28066b0c1d2d49e24c64b0",
+    "MissedUpdates/Decode.lean": "265e2cf9769c4e1574ff15449361aecb60d6f20faef33832044a9ee89b3df89d",
+    "MissedUpdates/Frame.lean": "76b2cf995362a15b3456addc39589d46e9d560ac757fccdf40e7f293aca5ccec",
+    "MissedUpdates/GapSuprema.lean": "6e3d931f05c4f3f4bbe3a0f1c7669b0ad0da2f144df22546301f15a4f6d26967",
+    "MissedUpdates/Growth.lean": "51bed854b270430948189c2b2b65a612380986078898d442c1826de84a57078d",
+    "MissedUpdates/Joining.lean": "1b32268d2ba0b8f38d07f29ad047bb180d094001a56b448b86949543ed23d00a",
+    "MissedUpdates/Limit.lean": "313c406ae200533eee2ef2be742167b2803ac2df4b2299356045ae6967f0c78a",
+    "MissedUpdates/Main.lean": "69bb5b881ea53d7401c68bbd0a91725021a3b8d26f808b82ebe9e261cac62a53",
+    "MissedUpdates/Matrix.lean": "36302d29ed2059d2038e8eb3bd00a8d46454a01e4bf9c267ab1ac6f4b40d5c96",
+    "MissedUpdates/NormComparison.lean": "c8e96a1ff6a8b90e034ecfbd67ea99028c14fae677172f8d67a9b58b3f1edd27",
+    "MissedUpdates/NormGrowth.lean": "24758a02c48a47b099541c88d4b9f4ea9b4b2542167966aaeb997f6cbc15afb0",
+    "MissedUpdates/Normalization.lean": "3945ba1f88cb79aa4b8fa027f01397b84f96a9e45847e1886cfd5aa5c1db9ec2",
+    "MissedUpdates/Periodic.lean": "24234d92854752558b565004019d20d00dbf7829992bbf61fff3d678e23992d1",
+    "MissedUpdates/Perron.lean": "e66d5e9de0ec560dbf0132a8d38c414988d46df077d9056b372fe720e23e6ee2",
+    "MissedUpdates/PerronConvergence.lean": "9b3644ce4541ae32ac8fe4a15d5287b4a3c86ce8f0c1ec20c48df4da469c76f8",
+    "MissedUpdates/PerronRadius.lean": "43583e3f144fa9033bc99b086079dbbe4cff2ad570355dce3d67100d1875a189",
+    "MissedUpdates/Protocol.lean": "503dfdf983fa660dc14b681ba2f0532571b588cee6215114671d7e65b978f3c9",
+    "MissedUpdates/Tail.lean": "4ddbd383ebbf0a75ee698bb6ab0b3cb5f611bbbc5e4e94df09af9ede2b7c6a8a",
+    "MissedUpdates/Words.lean": "b116ad141d1a6483d251c71edc441edfe1524cf62554ddcc956f20aedc39ab51",
+    "PF/Analysis/CstarAlgebra/Classes.lean": "de927146680ce684b98e65b62558fb6ab5dd64ffaf3fc69894f4403011705673",
+    "PF/Auxiliary.lean": "9394455aa66be51ae23ea43354cca9893432d942e096b67152fd8142e1157472",
+    "PF/Combinatorics/Quiver/Cyclic.lean": "f73c46d01d4dbc10d6e3970fb1ad92da8e6ebee4dfa7e08faa12769283ee04b3",
+    "PF/Combinatorics/Quiver/Path.lean": "f507e9895ec792c22bb0e423a0b6d5639660f18947105e6f73f1c32455c7a670",
+    "PF/Data/List.lean": "0d976b533bbaf735d316bee0fc02a88bfc25d501e700284c06fda6f650e68a29",
+    "PF/LinearAlgebra/Matrix/Spectrum.lean": "9d68f6025b4270cca0c8c8b450694a02a964ff8942a48b9e3d99b03e3ff31653",
+    "PF/PerronFrobenius/Aperiodic.lean": "b0d0560a732fde8f3ac42f7ed47a7125e0eb7246340d35277d13c0656ed94819",
+    "PF/PerronFrobenius/CollatzWielandt.lean": "7accc5aaec8018e7e34b7b0d721ed542b444c2dd0edb7407863c99d7cbb942f0",
+    "PF/PerronFrobenius/Dominance.lean": "d6b54519c11cb374b5bcf3cf53403417e9eda6da82308984bc6a4f728d81b23b",
+    "PF/PerronFrobenius/DominancePart2.lean": "9a2743b61a2435e44fd0ad86bfc765984a60ea011c7bfb4d4c0a5146ba8190f1",
+    "PF/PerronFrobenius/Irreducible.lean": "ba9320c28780becbdc77d5ca1364419b95dfb63954ff9bd35e741a7042d6ca79",
+    "PF/PerronFrobenius/Lemmas.lean": "9d672637f16727769e8b01a495aaae4e2d1cb4c3366ce671d17bf762b7ad174c",
+    "PF/PerronFrobenius/Multiplicity.lean": "13fb15d70f4440c69b7a0567d77ca8c9da4c484a4b97a280e1dfc9bdd1cda5d8",
+    "PF/PerronFrobenius/Primitive.lean": "0ddbe8a01f09fab3f0ebbfba78917217f6ece2fc5943a82483d7170f8cf59208",
+    "PF/PerronFrobenius/Stochastic.lean": "0e8525c895bea4336c10b0cb29a01751ed5137de1d394ea2dba57a7b522018a9",
+    "PF/PerronFrobenius/Uniqueness.lean": "d83d902263c14f13de63f67ad5dafcca0f55a86baa0ca8b762039f7b8e3116f1",
+    "PF/Topology/Compactness/ExtremeValueUSC.lean": "1b6726c55843f11cd11f0d763a5b5ea991af642e28fbc270f6d4729c1db60dae",
+    "check.py": "20c346700d02dc2993da26faa42e01baa020ed1339491b6c47200b14a23bb0dc",
+    "checks/MainConsumer.lean": "0b4d54cda2cee9b0b831297b47e30df8ddaca412246e21ed3f5ff8b8318e215e",
+    "checks/PositiveControl.lean": "935c64e9b5d45823741f27514d28f7e945067382b2ab6cb526370db7558e2490",
+    "checks/RejectAllMisses.lean": "540041e00c0b5448f982e665b66cf95b938786b47225562cc09aafa5dbdfd161",
+    "checks/RejectFalseGain.lean": "4b60e62f4877b46cda8177212d5acdcf80dc9c44bb8de00352a576542156048b",
+    "checks/RejectMissingStrictPositivity.lean": "ae5dcef0536208169df38155698f661019f794a3acf5787b99a712cc2b8af7c9",
+    "checks/RejectShiftedCoefficient.lean": "38ac9bbff551145c68968c87dd10c417ae621159554c70b3ede3c57f837c31e6",
+    "lake-manifest.json": "851a114c1cae868f18997cf1992f6f69015bdc3bd1afea1f123a3a31414b8819",
+    "lakefile.toml": "605aee81fe1a3045c03251ebe357382ee1147f101a90c8d60fa6739e31d811f2",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "licenses/UPSTREAM-HASHES.json": "3ba2dd4c28d3a012a740c020d8b3db9bad91e79cd4b97055cce060ca2450ae72"
+  },
+  "status": "PASS",
+  "theorems_checked": 175,
+  "trust_level": 0,
+  "upstream_proof_commit": "58b321e9c9b86448e4fdd897a428c8cef7297f5e",
+  "upstream_proof_files_hash_verified": 20,
+  "upstream_proof_repository": "https://github.com/mkaxiomatic-ai/HNBM"
+}
